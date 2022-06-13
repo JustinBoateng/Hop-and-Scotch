@@ -72,4 +72,10 @@ public class CameraFollow : MonoBehaviour
             */
         }
     }
+
+    public void SetXBoundary(float min, float max)
+    {
+        xMin = min;
+        xMax = max;      
+    }
 }

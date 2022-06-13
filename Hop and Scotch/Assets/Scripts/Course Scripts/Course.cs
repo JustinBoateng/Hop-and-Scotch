@@ -24,9 +24,18 @@ public class Course : MonoBehaviour
     public GameObject[] CourseSpotForme; //used as a reference to each spot
     public Player PlayerReference;
 
+
+    public float XMin;
+    public float XMax;
+    public CameraFollow CF;
+
+
+    public ProgressLine PL;
     // Start is called before the first frame update
     void Start()
     {
+        CF.SetXBoundary(XMin, XMax);
+
         //set the path to an array of chars
         path = course.ToCharArray();
         CourseSpotForme = new GameObject[path.Length];
@@ -51,9 +60,11 @@ public class Course : MonoBehaviour
 
         bp.setSpot(0);       
         bp.setyOffset(BouncePointerOffset);
-        bp.SetPos(this.gameObject);
+        bp.SetPos(CourseSpotForme[0]);
 
         PlayerReference.setPosition(bp.transform);
+
+        PL.FinishLine = CourseSpotForme[CourseSpotForme.Length - 1];
     }
 
     // Update is called once per frame
