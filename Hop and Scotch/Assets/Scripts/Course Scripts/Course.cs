@@ -34,16 +34,17 @@ public class Course : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //set the boundary of the camera to not go beyond the stage
         CF.SetXBoundary(XMin, XMax);
 
-        //set the path to an array of chars
+        //set the path (array of integers) to an array of chars
         path = course.ToCharArray();
         CourseSpotForme = new GameObject[path.Length];
 
         //setup the spotpostracker to keep track of the offset between spots
         SpotPosTracker = StartSpotPosx;
 
-        //set up each other spot afterwards
+        //set up each spot's position
         for(int i = 0; i < path.Length; i++)
         {
             //Debug.Log("Placing Log #" + i);

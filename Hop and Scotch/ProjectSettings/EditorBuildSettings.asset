@@ -8,4 +8,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SinglePlayer-GameScene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/MultiPlayer-GameScene.unity
+    guid: 2210539294b0498429eaae0c460fe207
+  - enabled: 1
+    path: Assets/Scenes/Character-Select-Scene.unity
+    guid: 7073543083afa9f4ca45f11fd986e1ea
   m_configObjects: {}

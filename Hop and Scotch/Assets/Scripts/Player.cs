@@ -39,6 +39,7 @@ public class Player : MonoBehaviour
 
     public int PlayerNumber = 0;
     public bool reachedGoal = false;
+    public bool paused = false;
 
     // Start is called before the first frame update
     void Start()
@@ -49,63 +50,76 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //if both the player and bouncepointer are at the end goal, then the player has reached the goal
-        if (CourseRef.getBP().currentspot == '9' && !Leap) reachedGoal = true;
-
-        if(!trip)
-            InputEval();
-
-        else if (trip) tripCalc();
-
-        if (Leap)
+        if (Input.GetButtonDown("P" + PlayerNumber + " Pause") && !PauseMenu.PM.isPaused)
         {
-            this.GetComponent<Rigidbody2D>().gravityScale = 0;
-            //process of leaping
-            if (InterpolateAmount < 1)
-            {
-                //Debug.Log("Leaping");
-                Leaping();
-            }
+            PauseMenu.PM.Pause();
+        }
 
-            //if we reached the end of the leap
-            else
+        else if (Input.GetButtonDown("P" + PlayerNumber + " Pause") && PauseMenu.PM.isPaused)
+        { 
+            PauseMenu.PM.Resume();
+        }
+
+
+        if (!PauseMenu.PM.isPaused)
+        {
+            //if both the player and bouncepointer are at the end goal, then the player has reached the goal
+            if (CourseRef.getBP().currentspot == '9' && !Leap) reachedGoal = true;
+
+            if (!trip)
+                InputEval();
+
+            else if (trip) tripCalc();
+
+            if (Leap)
             {
-                //if we caught uo to the bounce pointer...
-                if (endPointSpot == CourseRef.getBP().getSpot())
+                this.GetComponent<Rigidbody2D>().gravityScale = 0;
+                //process of leaping
+                if (InterpolateAmount < 1)
                 {
-                    Leap = false;
-                    JumpPathTransfer();
-                    Speed = BaseSpeed;
+                    //Debug.Log("Leaping");
+                    Leaping();
                 }
 
-                //if we havent caught up to the bounce pointer
+                //if we reached the end of the leap
                 else
                 {
-                    SetPoints();
-                    JumpPathTransfer();
+                    //if we caught uo to the bounce pointer...
+                    if (endPointSpot == CourseRef.getBP().getSpot())
+                    {
+                        Leap = false;
+                        JumpPathTransfer();
+                        Speed = BaseSpeed;
+                    }
+
+                    //if we havent caught up to the bounce pointer
+                    else
+                    {
+                        SetPoints();
+                        JumpPathTransfer();
+                        InterpolateAmount = 0;
+
+                        if (successfulHops <= MaxSuccessfulHops)
+                        {
+                            successfulHops++;
+                            Speed = BaseSpeed + (successfulHops / 80);
+                        }
+                    }
+                    //if the spot the player is at is the same as the slot the bp is at, put leap to false
+                    //else, set pointB to where bp is currently at and Leap again
+
                     InterpolateAmount = 0;
 
-                    if (successfulHops <= MaxSuccessfulHops)
-                    {
-                        successfulHops++;
-                        Speed = BaseSpeed + (successfulHops / 80);
-                    }
                 }
-                //if the spot the player is at is the same as the slot the bp is at, put leap to false
-                //else, set pointB to where bp is currently at and Leap again
-
-                InterpolateAmount = 0;
-
             }
-        }
 
 
-        //if the correct button is pressed
-        else
-        {
-            this.GetComponent<Rigidbody2D>().gravityScale = 0;
-        }
-         
+            //if the correct button is pressed
+            else
+            {
+                this.GetComponent<Rigidbody2D>().gravityScale = 0;
+            }
+        } 
     }
 
 
