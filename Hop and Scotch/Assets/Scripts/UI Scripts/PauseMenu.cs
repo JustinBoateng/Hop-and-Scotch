@@ -77,6 +77,7 @@ public class PauseMenu : MonoBehaviour
     public void Exit()
     {
         Debug.Log("Exiting");
-        SceneManager.LoadScene("Character-Select-Scene");
+        GameManager.GM.FadeOutFlag = true;
+
     }
 }

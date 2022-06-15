@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
     public bool reachedGoal = false;
     public bool paused = false;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -50,7 +51,7 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("P" + PlayerNumber + " Pause") && !PauseMenu.PM.isPaused)
+        if (Input.GetButtonDown("P" + PlayerNumber + " Pause") && !PauseMenu.PM.isPaused && !GameManager.GM.WinnerDecided)
         {
             PauseMenu.PM.Pause();
         }
@@ -64,9 +65,13 @@ public class Player : MonoBehaviour
         if (!PauseMenu.PM.isPaused)
         {
             //if both the player and bouncepointer are at the end goal, then the player has reached the goal
-            if (CourseRef.getBP().currentspot == '9' && !Leap) reachedGoal = true;
+            if (CourseRef.getBP().currentspot == CourseRef.path.Length-1 && !Leap) {
+                reachedGoal = true;
+                GameManager.GM.WinnerDecided = true;
+            }
 
-            if (!trip)
+            //inputs are registered if player hasm't tripped, the game isn't paused, and it is after the countdown but before a winner has been decided
+            if (!trip && GameManager.GM.PlayersCanMove)
                 InputEval();
 
             else if (trip) tripCalc();
