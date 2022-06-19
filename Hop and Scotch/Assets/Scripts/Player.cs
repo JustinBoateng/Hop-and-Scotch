@@ -127,6 +127,12 @@ public class Player : MonoBehaviour
         } 
     }
 
+    public void JumpReset()
+    {
+        JumpPathTransfer();
+        InterpolateAmount = 0;
+        Leap = false;
+    }
 
     public void setPosition(Transform t)
     {

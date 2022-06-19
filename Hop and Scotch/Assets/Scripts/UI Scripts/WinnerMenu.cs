@@ -27,29 +27,34 @@ public class WinnerMenu : MonoBehaviour
     public GameObject PointB;
     public float InterAmount = 0.01f;
     public float InterRate = 0.05f;
+    public float InterRateBase = 0.05f;
     public float InterDecay = 0.001f;
 
 
     // Start is called before the first frame update
+    private void Awake()
+    {
+        if (WM == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            WM = this;
+        }
+
+        else if (WM != this)
+            Destroy(gameObject);
+
+    }
+
     void Start()
     {
-        WM = this;
-        gameObject.SetActive(false);
-        WinningIcons[0].gameObject.SetActive(false);
-        WinningIcons[1].gameObject.SetActive(false);
-        WinningIcons[2].gameObject.SetActive(false);
-        WinnerSprites[0].gameObject.SetActive(false);
-        WinnerSprites[1].gameObject.SetActive(false);
-        WinnerSprites[2].gameObject.SetActive(false);
-        ExitConfirmationWinVer.gameObject.SetActive(false);
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (IconSlides)
+        if (IconSlides && InterAmount <=1)
         {
-            if(InterAmount <= 1)
                 SlideTheWinner();
         }   
     }
@@ -57,13 +62,14 @@ public class WinnerMenu : MonoBehaviour
     public void setupResults(int W)
     {
         Winner = W;
-        WinningIcons[W].gameObject.SetActive(true);
-        WinnerSprites[W].gameObject.SetActive(true);
-        IconSlides = true;
+        //IconSlides = true;
     }
 
     public void SlideTheWinner()
     {
+        WinningIcons[Winner].gameObject.SetActive(true);
+        WinnerSprites[Winner].gameObject.SetActive(true);
+        IconSlides = true;
         InterAmount = InterAmount + InterRate;
         InterRate = InterRate - InterDecay;
         WinnerSprites[Winner].gameObject.transform.position = Vector3.Lerp(PointA.transform.position, PointB.transform.position, InterAmount);
@@ -71,16 +77,38 @@ public class WinnerMenu : MonoBehaviour
 
     public void Rematch()
     {
-        string scene = SceneManager.GetActiveScene().ToString();
-        Debug.Log(scene);
-        if(GameManager.GM.NoofPlayers == 1)
+        GameManager.GM.ResetFlag = true;
+        GameManager.GM.FadeOutFlag = true;
+
+        /*string scene = SceneManager.GetActiveScene().ToString();
+        //Debug.Log(scene);
+        if (GameManager.GM.NoofPlayers == 1)
         {
-            SceneManager.LoadScene("SinglePlayer-GameScene");
+            GameManager.GM.RematchSinglePlayer();
         }
 
-        else SceneManager.LoadScene("Multiplayer-GameScene");
+        else GameManager.GM.RematchMultiplayer();
+        //else SceneManager.LoadScene("Multiplayer-GameScene");
         //SceneManager.LoadScene(SceneManager.GetActiveScene());
+        */
+    }
 
+    public void Reset()
+    {
+        if (Winner != -1)
+        {
+            WinnerSprites[Winner].gameObject.transform.position = PointA.transform.position;
+            InterAmount = 0;
+            InterRate = InterRateBase;
+            Winner = -1;
+        }
+        WinningIcons[0].gameObject.SetActive(false);
+        WinningIcons[1].gameObject.SetActive(false);
+        WinningIcons[2].gameObject.SetActive(false);
+        WinnerSprites[0].gameObject.SetActive(false);
+        WinnerSprites[1].gameObject.SetActive(false);
+        WinnerSprites[2].gameObject.SetActive(false);
+        ExitConfirmationWinVer.gameObject.SetActive(false);
     }
 
     public void ExitConfirmation()

@@ -58,13 +58,9 @@ public class Course : MonoBehaviour
             CourseSpotForme[i] = s;
         }
         //now the course should be built
-
-        bp.setSpot(0);       
-        bp.setyOffset(BouncePointerOffset);
-        bp.SetPos(CourseSpotForme[0]);
-
-        PlayerReference.setPosition(bp.transform);
-
+        InitializePos();
+    
+  
         PL.FinishLine = CourseSpotForme[CourseSpotForme.Length - 1];
     }
 
@@ -103,5 +99,14 @@ public class Course : MonoBehaviour
     public BouncePointer getBP()
     {
         return bp;
+    }
+
+    public void InitializePos()
+    {
+        bp.setSpot(0);
+        bp.setyOffset(BouncePointerOffset);
+        bp.SetPos(CourseSpotForme[0]);
+        PlayerReference.setPosition(bp.transform);
+        PlayerReference.JumpReset(); //Just calls JumpPathTransfer after resetting the BP Position
     }
 }

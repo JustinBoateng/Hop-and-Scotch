@@ -41,12 +41,13 @@ public class GameManager : MonoBehaviour
     public bool FadeInFlag;
     public bool FadeOutFlag;
 
+    public WinnerMenu WM;
     public bool WinnerMenuPopupFlag = false;
     public float WMPTimer;
     public float WMPTRate;
     public float MaxWMPT;
-    
 
+    public bool ResetFlag = false;
 
     private void Awake()
     {
@@ -66,17 +67,26 @@ public class GameManager : MonoBehaviour
     {
         TimerSeconds = 0;
         NoofPlayers = Players.Length;
+
         StartCountdown = BaseCountdown;
         WinnerDecided = false;
+        WMPTimer = 0;
+        WinnerMenuPopupFlag = false;
+
         P1WinnerSprite.gameObject.SetActive(false);
         P2WinnerSprite.gameObject.SetActive(false);
         DrawSprite.gameObject.SetActive(false);
 
-        WinnerMenu.WM.gameObject.SetActive(false);
-
+        //WM = WinnerMenu.WM;
+        Debug.Log("Hidding Win Screen");
+        WM.Reset();
+        WM.gameObject.SetActive(false);
         FadeInFlag = true;
         FadeOutFlag = false;
         FadeValue = 1;
+
+        Winner = -1;
+        Decision = false;
     }
 
     // Update is called once per frame
@@ -88,12 +98,12 @@ public class GameManager : MonoBehaviour
 
         //Beginning Countdown
         if (StartCountdown > 0 && !FadeInFlag && !FadeOutFlag) StartCountdown = StartCountdown - CountdownRate;
-        else if (StartCountdown <= 0) PlayersCanMove = true;
+        else if (StartCountdown <= 0 && !WinnerDecided) PlayersCanMove = true;
 
         //clock is active if the game has started and has not finished.
         if (PlayersCanMove && !WinnerDecided && !PauseMenu.PM.isPaused) TimerUpdate();
 
-        if (WinnerDecided)
+        if (WinnerDecided && !WinnerMenuPopupFlag && (WMPTimer < MaxWMPT)) //three checks are necessary to make sure these if-else statements don't leave variables open to repeating the cycle
         {
             if (NoofPlayers > 1)
             {
@@ -123,7 +133,7 @@ public class GameManager : MonoBehaviour
                 }
             }
 
-            else if (Players[0].reachedGoal)
+            else if (NoofPlayers == 1 && Players[0].reachedGoal)
             {
                 Winner = 1;
                 PlayersCanMove = false;
@@ -132,7 +142,7 @@ public class GameManager : MonoBehaviour
 
 
             WinnerMenuPopupFlag = true;
-
+            WM.setupResults(Winner);
 
         }
 
@@ -140,15 +150,19 @@ public class GameManager : MonoBehaviour
         if (WinnerMenuPopupFlag && WMPTimer < MaxWMPT)
         {
             WMPTimer = WMPTimer + WMPTRate;
-            if(WMPTimer >= MaxWMPT)
-            {
-                WinnerMenu.WM.gameObject.SetActive(true);
-                EventSystem.current.SetSelectedGameObject(WinnerMenu.WM.RematchButton);
-                WinnerMenu.WM.setupResults(Winner);
-            }
+           
         }
 
-        
+        else if (WinnerMenuPopupFlag && WMPTimer >= MaxWMPT)
+        {
+            Debug.Log("Win Screen Pops up");
+            WM.gameObject.SetActive(true);
+            //WM.setupResults(Winner);
+            WM.SlideTheWinner();
+            EventSystem.current.SetSelectedGameObject(WinnerMenu.WM.RematchButton);
+            WinnerMenuPopupFlag = false;
+        }
+
 
     }
 
@@ -197,8 +211,49 @@ public class GameManager : MonoBehaviour
         if (FadeValue >= 1)
         {
             FadeOutFlag = false;
-            SceneManager.LoadScene("Character-Select-Scene");
+            //SceneManager.LoadScene("Character-Select-Scene");
+
+            if (ResetFlag)
+            {
+                if (NoofPlayers == 1)
+                    ResetSinglePlayer();
+                else ResetMultiPlayer();
+            }
+
+            FadeInFlag = true;
 
         }
+    }
+
+    public void ResetSinglePlayer()
+    {
+        //fade out
+        //put the player back at the starting position
+        //put the pointer back at the starting position
+
+        Players[0].CourseRef.InitializePos();
+        Players[0].reachedGoal = false;
+        ResetFlag = false;
+        WM.Reset();
+        Start();
+        EventSystem.current.SetSelectedGameObject(null); //always set the setselectedgameobject to null when setting off the menu
+        //WM.gameObject.SetActive(false);
+    }
+
+    public void ResetMultiPlayer()
+    {
+        //fade out
+        //put the player back at the starting position
+        //put the pointer back at the starting position
+
+        Players[0].CourseRef.InitializePos();
+        Players[0].reachedGoal = false;
+        Players[1].CourseRef.InitializePos();
+        Players[1].reachedGoal = false;
+        ResetFlag = false;
+        WM.Reset();
+        Start();
+        EventSystem.current.SetSelectedGameObject(null);
+        //WM.gameObject.SetActive(false);
     }
 }
