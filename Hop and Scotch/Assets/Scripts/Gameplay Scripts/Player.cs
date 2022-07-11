@@ -42,15 +42,28 @@ public class Player : MonoBehaviour
     public bool paused = false;
 
 
+    public Animator animator;
+
+    public bool Hopping = false;
+    public bool Midair = false;
+    public int HopLevel = 0;
+    public bool Win = false;
+    public bool Lose = false;
+    public bool Tripped = false;
+
     // Start is called before the first frame update
     void Start()
     {
-
+        SetAnimation();
+        Win = false;
+        Lose = false;
     }
 
     // Update is called once per frame
     void Update()
     {
+        SetAnimation();
+        
         if (Input.GetButtonDown("P" + PlayerNumber + " Pause") && !PauseMenu.PM.isPaused && !GameManager.GM.WinnerDecided)
         {
             PauseMenu.PM.Pause();
@@ -95,6 +108,8 @@ public class Player : MonoBehaviour
                         Leap = false;
                         JumpPathTransfer();
                         Speed = BaseSpeed;
+
+                        HopLevel = 0;
                     }
 
                     //if we havent caught up to the bounce pointer
@@ -109,6 +124,7 @@ public class Player : MonoBehaviour
                             successfulHops++;
                             Speed = BaseSpeed + (successfulHops / 80);
                         }
+
                     }
                     //if the spot the player is at is the same as the slot the bp is at, put leap to false
                     //else, set pointB to where bp is currently at and Leap again
@@ -126,6 +142,18 @@ public class Player : MonoBehaviour
             }
         } 
     }
+
+    public void SetAnimation()
+    {
+        animator.SetBool("Hopping", Leap);
+        animator.SetBool("Midair", Midair);
+        animator.SetInteger("Hop Level", HopLevel);
+        animator.SetBool("Win", Win);
+        animator.SetBool("Lose", Lose);
+        animator.SetBool("Tripped", trip && !Midair);
+        animator.SetFloat("TripLag", triplag);
+    }
+
 
     public void JumpReset()
     {
@@ -147,7 +175,10 @@ public class Player : MonoBehaviour
 
         this.transform.position = temppointAB_BC.transform.position;
         InterpolateAmount = InterpolateAmount + BaseSpeed;
-    }
+
+        if (InterpolateAmount > 0.02 && InterpolateAmount < 0.97) Midair = true;
+        else Midair = false;
+    }//sets the midair movement and also checks if the player is in the midair state
 
     public void InputEval()
     {
@@ -237,9 +268,11 @@ public class Player : MonoBehaviour
         //but only if the player isn't already in the air
             pointA = this.transform;
             pointC = CourseRef.getBP().transform;
-            pointB.position = new Vector2((pointC.position.x + pointA.position.x) / 2, CourseRef.transform.position.y + jumpheight); 
-            //JumpHeight is relative to the position of the course
-       
+            pointB.position = new Vector2((pointC.position.x + pointA.position.x) / 2, CourseRef.transform.position.y + jumpheight);
+        //JumpHeight is relative to the position of the course
+
+            HopLevel = (int) Mathf.Abs(pointC.transform.position.x - pointA.transform.position.x);
+            
     }
 
     private void JumpPathTransfer()

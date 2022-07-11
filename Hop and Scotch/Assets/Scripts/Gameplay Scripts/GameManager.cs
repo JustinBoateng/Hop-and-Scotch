@@ -122,6 +122,8 @@ public class GameManager : MonoBehaviour
                     PlayersCanMove = false;
                     P1WinnerSprite.gameObject.SetActive(true);
                     Decision = true;
+                    Players[0].Win = true;
+                    Players[1].Lose = true;
                 }
 
                 else if (Players[1].reachedGoal && !drawflag && !Decision)
@@ -130,6 +132,8 @@ public class GameManager : MonoBehaviour
                     PlayersCanMove = false;
                     P2WinnerSprite.gameObject.SetActive(true);
                     Decision = true;
+                    Players[1].Win = true;
+                    Players[0].Lose = true;
                 }
             }
 
@@ -138,6 +142,7 @@ public class GameManager : MonoBehaviour
                 Winner = 1;
                 PlayersCanMove = false;
                 P1WinnerSprite.gameObject.SetActive(true);
+                Players[0].Win = true;
             }
 
 
@@ -240,6 +245,9 @@ public class GameManager : MonoBehaviour
         EventSystem.current.SetSelectedGameObject(null); //always set the setselectedgameobject to null when setting off the menu
                                                          //WM.gameObject.SetActive(false);
 
+        Players[0].Win = false;
+        Players[0].Lose = false;
+
         TimerSeconds = 0;
         TimerMinutes = 0;
         TimerMilliSeconds = 0;
@@ -256,6 +264,12 @@ public class GameManager : MonoBehaviour
         Players[0].reachedGoal = false;
         Players[1].CourseRef.InitializePos();
         Players[1].reachedGoal = false;
+
+        Players[0].Win = false;
+        Players[0].Lose = false;
+        Players[1].Win = false;
+        Players[1].Lose = false;
+
         ResetFlag = false;
         WM.Reset();
         Start();

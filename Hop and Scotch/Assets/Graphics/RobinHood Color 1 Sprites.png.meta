@@ -1,0 +1,772 @@
+fileFormatVersion: 2
+guid: 193d65dec8e5fc8468392d1fc1b7d12e
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2459960422648297570
+    second: RobinHood Color 1 Sprites_0
+  - first:
+      213: -949909725617037969
+    second: RobinHood Color 1 Sprites_1
+  - first:
+      213: -2165153551209438352
+    second: RobinHood Color 1 Sprites_2
+  - first:
+      213: 3813123127040707234
+    second: RobinHood Color 1 Sprites_3
+  - first:
+      213: 5907550581073461921
+    second: RobinHood Color 1 Sprites_4
+  - first:
+      213: 6365414615462654297
+    second: RobinHood Color 1 Sprites_5
+  - first:
+      213: 3294872067058073954
+    second: RobinHood Color 1 Sprites_6
+  - first:
+      213: -8353928903586354157
+    second: RobinHood Color 1 Sprites_7
+  - first:
+      213: -5787064137441961644
+    second: RobinHood Color 1 Sprites_8
+  - first:
+      213: -336971383104595790
+    second: RobinHood Color 1 Sprites_9
+  - first:
+      213: -7570355346363353728
+    second: RobinHood Color 1 Sprites_10
+  - first:
+      213: -5935392621528222722
+    second: RobinHood Color 1 Sprites_11
+  - first:
+      213: -1713789059625884077
+    second: RobinHood Color 1 Sprites_12
+  - first:
+      213: 2221516290478487310
+    second: RobinHood Color 1 Sprites_13
+  - first:
+      213: 4250619163150779579
+    second: RobinHood Color 1 Sprites_14
+  - first:
+      213: -3255410785587763023
+    second: RobinHood Color 1 Sprites_15
+  - first:
+      213: 220946398408504683
+    second: RobinHood Color 1 Sprites_16
+  - first:
+      213: 6891949664295776955
+    second: RobinHood Color 1 Sprites_17
+  - first:
+      213: 4248132570645640746
+    second: RobinHood Color 1 Sprites_18
+  - first:
+      213: 7021238213679877129
+    second: RobinHood Color 1 Sprites_19
+  - first:
+      213: -6780997644440272234
+    second: RobinHood Color 1 Sprites_20
+  - first:
+      213: 3580428881359830662
+    second: RobinHood Color 1 Sprites_21
+  - first:
+      213: -2149319673342116103
+    second: RobinHood Color 1 Sprites_22
+  - first:
+      213: 8060902515260066085
+    second: RobinHood Color 1 Sprites_23
+  - first:
+      213: 1984305798229470183
+    second: RobinHood Color 1 Sprites_24
+  - first:
+      213: -1207739154293139994
+    second: RobinHood Color 1 Sprites_25
+  - first:
+      213: 4833125156169250133
+    second: RobinHood Color 1 Sprites_26
+  - first:
+      213: -3367912778134542862
+    second: RobinHood Color 1 Sprites_27
+  - first:
+      213: -5515613685031565070
+    second: RobinHood Color 1 Sprites_28
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: RobinHood Color 1 Sprites_0
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 605
+        width: 74
+        height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e97478e67077cddd0800000000000000
+      internalID: -2459960422648297570
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobinHood Color 1 Sprites_1
+      rect:
+        serializedVersion: 2
+        x: 110
+        y: 605
+        width: 74
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6d58eb232e31d2f0800000000000000
+      internalID: -949909725617037969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobinHood Color 1 Sprites_2
+      rect:
+        serializedVersion: 2
+        x: 203
+        y: 605
+        width: 74
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0736cff0154d3f1e0800000000000000
+      internalID: -2165153551209438352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobinHood Color 1 Sprites_3
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 605
+        width: 88
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2aa8610084feae430800000000000000
+      internalID: 3813123127040707234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobinHood Color 1 Sprites_4
+      rect:
+        serializedVersion: 2
+        x: 20
+        y: 485
+        width: 71
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a2498534f5dbf150800000000000000
+      internalID: 5907550581073461921
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobinHood Color 1 Sprites_5
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 485
+        width: 73
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9513bba0ede765850800000000000000
+      internalID: 6365414615462654297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobinHood Color 1 Sprites_6
+      rect:
+        serializedVersion: 2
+        x: 208
+        y: 485
+        width: 70
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2618a5120bcb9bd20800000000000000
+      internalID: 3294872067058073954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobinHood Color 1 Sprites_7
+      rect:
+        serializedVersion: 2
+        x: 309
+        y: 485
+        width: 62
+        height: 74
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31cedd65ce1e01c80800000000000000
+      internalID: -8353928903586354157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobinHood Color 1 Sprites_8
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 366
+        width: 79
+        height: 78
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4599e5304d730bfa0800000000000000
+      internalID: -5787064137441961644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobinHood Color 1 Sprites_9
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 366
+        width: 78
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b8149aff46d25bf0800000000000000
+      internalID: -336971383104595790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobinHood Color 1 Sprites_10
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 366
+        width: 89
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08578840ce1b0f690800000000000000
+      internalID: -7570355346363353728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobinHood Color 1 Sprites_11
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 366
+        width: 91
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ef3f5579bdf31ada0800000000000000
+      internalID: -5935392621528222722
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobinHood Color 1 Sprites_12
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 242
+        width: 95
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3566c092ee56738e0800000000000000
+      internalID: -1713789059625884077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobinHood Color 1 Sprites_13
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 242
+        width: 95
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e07b6bccb4964de10800000000000000
+      internalID: 2221516290478487310
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobinHood Color 1 Sprites_14
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 242
+        width: 95
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb4021fab9b3dfa30800000000000000
+      internalID: 4250619163150779579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobinHood Color 1 Sprites_16
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 242
+        width: 95
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b657a872495f01300800000000000000
+      internalID: 220946398408504683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobinHood Color 1 Sprites_18
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 150
+        width: 75
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a26b910c01664fa30800000000000000
+      internalID: 4248132570645640746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobinHood Color 1 Sprites_19
+      rect:
+        serializedVersion: 2
+        x: 109
+        y: 150
+        width: 93
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90c89c984f2707160800000000000000
+      internalID: 7021238213679877129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobinHood Color 1 Sprites_20
+      rect:
+        serializedVersion: 2
+        x: 221
+        y: 150
+        width: 94
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6928064d19e05e1a0800000000000000
+      internalID: -6780997644440272234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobinHood Color 1 Sprites_21
+      rect:
+        serializedVersion: 2
+        x: 335
+        y: 150
+        width: 93
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68e7001091d30b130800000000000000
+      internalID: 3580428881359830662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobinHood Color 1 Sprites_22
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 149
+        width: 62
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fe3fa905251c22e0800000000000000
+      internalID: -2149319673342116103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobinHood Color 1 Sprites_23
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 14
+        width: 61
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 529012f01241edf60800000000000000
+      internalID: 8060902515260066085
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobinHood Color 1 Sprites_24
+      rect:
+        serializedVersion: 2
+        x: 88
+        y: 14
+        width: 88
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eb27353c9ba98b10800000000000000
+      internalID: 1984305798229470183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobinHood Color 1 Sprites_25
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 14
+        width: 62
+        height: 96
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6e5d60753af3d3fe0800000000000000
+      internalID: -1207739154293139994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobinHood Color 1 Sprites_26
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 14
+        width: 88
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 555f878f8b5b21340800000000000000
+      internalID: 4833125156169250133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobinHood Color 1 Sprites_27
+      rect:
+        serializedVersion: 2
+        x: 366
+        y: 14
+        width: 61
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f5aac81c25c241d0800000000000000
+      internalID: -3367912778134542862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: RobinHood Color 1 Sprites_28
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 14
+        width: 61
+        height: 99
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f80961939a9473b0800000000000000
+      internalID: -5515613685031565070
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
