@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8000408401918261724}
   - component: {fileID: 8000408401918261726}
   - component: {fileID: 8000408401918261727}
+  - component: {fileID: 8397361624339641823}
   m_Layer: 0
   m_Name: Player1
   m_TagString: Untagged
@@ -124,6 +125,16 @@ MonoBehaviour:
   triplag: 5
   triplagrate: 0.052
   PlayerNumber: 1
+  reachedGoal: 0
+  paused: 0
+  animator: {fileID: 8397361624339641823}
+  Hopping: 0
+  Midair: 0
+  HopLevel: 0
+  Win: 0
+  Lose: 0
+  Tripped: 0
+  AnimationCode: N/A
 --- !u!50 &8000408401918261724
 Rigidbody2D:
   serializedVersion: 4
@@ -182,3 +193,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.41, y: 0.61}
   m_EdgeRadius: 0
+--- !u!95 &8397361624339641823
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8000408401918261714}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

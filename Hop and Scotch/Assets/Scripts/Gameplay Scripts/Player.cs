@@ -51,12 +51,22 @@ public class Player : MonoBehaviour
     public bool Lose = false;
     public bool Tripped = false;
 
+    public string AnimationCode;
+
     // Start is called before the first frame update
     void Start()
     {
         SetAnimation();
         Win = false;
         Lose = false;
+        for (int i = 0; i < AnimationDictionary.AD.AnimationArray.Length; i++) {
+            Debug.Log("Comparing " + AnimationDictionary.AD.AnimationArray[i].name + " to " + AnimationCode);
+            if (AnimationDictionary.AD.AnimationArray[i].name == AnimationCode)
+            {
+                animator.runtimeAnimatorController = AnimationDictionary.AD.AnimationArray[i];
+                break;
+            }
+        }
     }
 
     // Update is called once per frame

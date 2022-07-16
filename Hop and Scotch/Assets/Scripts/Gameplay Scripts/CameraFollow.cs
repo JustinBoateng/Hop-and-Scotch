@@ -35,41 +35,6 @@ public class CameraFollow : MonoBehaviour
 
             transform.position = new Vector3(Mathf.Clamp(target.position.x, xMin, xMax) + CameraOffset, Mathf.Clamp(target.position.y, yMin, yMax), transform.position.z);
 
-            /*
-            if ((TargetPlayer.VehicleMode == "Cowboy") && (TargetPlayer.PVeloc >= TargetPlayer.MaxSpeed))
-            {
-                if (TargetPlayer.isFlipped == 1)
-                {
-                    if (CameraOffset >= MaxRightCameraOffset) CameraOffset = MaxRightCameraOffset;
-
-                    else CameraOffset = CameraOffset + CameraOffsetRate;
-                }
-                else if (TargetPlayer.isFlipped == -1)
-                {
-                    if (CameraOffset <= MaxLeftCameraOffset) CameraOffset = MaxLeftCameraOffset;
-
-                    else CameraOffset = CameraOffset - CameraOffsetRate;
-                }
-
-
-            }
-            
-            if (TargetPlayer.VehicleMode == "Cowboy" && !TargetPlayer.Accelerating)
-            {
-                if (TargetPlayer.isFlipped == 1)
-                {
-                    if (CameraOffset <= 0) CameraOffset = 0;
-                    CameraOffset = CameraOffset - CameraOffsetRate;
-                }
-                else if (TargetPlayer.isFlipped == -1)
-                {
-                    if (CameraOffset >= 0) CameraOffset = 0;
-                    CameraOffset = CameraOffset + CameraOffsetRate;
-                }
-
-
-            }
-            */
         }
     }
 

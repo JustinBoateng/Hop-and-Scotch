@@ -16,19 +16,19 @@ public class Course : MonoBehaviour
 
     public GameObject BlockFolder;
     public GameObject BlockPrefab;
-    public float StartSpotPosx;
-    public float StartSpotPosy;
+
     public float SpotPosTracker;
     public float SpotOffset;
 
     public GameObject[] CourseSpotForme; //used as a reference to each spot
     public Player PlayerReference;
 
-
+    public float StartSpotPosx;
+    public float StartSpotPosy;
     public float XMin;
     public float XMax;
     public CameraFollow CF;
-
+    //These five values determine the boundaries of the camera
 
     public ProgressLine PL;
     // Start is called before the first frame update
