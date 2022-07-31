@@ -32,4 +32,19 @@ public class AnimationDictionary : MonoBehaviour
     {
         
     }
+
+    public RuntimeAnimatorController SpriteRetrieval(string SpriteCode)
+    {
+        for (int i = 0; i < AnimationArray.Length; i++)
+        {
+            //Debug.Log("Comparing " + AnimationArray[i].name + " to " + SpriteCode);
+            if (AnimationDictionary.AD.AnimationArray[i].name == SpriteCode)
+            {
+                return AnimationDictionary.AD.AnimationArray[i];
+                break;
+            }
+        }
+
+        return null;
+    }
 }

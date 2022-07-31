@@ -14,6 +14,9 @@ public class Spot : MonoBehaviour
 
     public bool Blank = false;
 
+
+    public SpriteRenderer BlockVisual;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -26,7 +29,7 @@ public class Spot : MonoBehaviour
         
     }
 
-    public void setButt(int bt, char c)
+    public void setButt(int bt, char c, float yoffset)
     {
         //set the buton type and the actual button 
         buttontype = bt;
@@ -42,7 +45,7 @@ public class Spot : MonoBehaviour
 
         if (c == '0')
         {
-            this.GetComponent<SpriteRenderer>().sprite = null;
+            BlockVisual.GetComponent<SpriteRenderer>().sprite = null;
             Blank = true;
         }
 
@@ -56,16 +59,18 @@ public class Spot : MonoBehaviour
 
         else if (c == '8')
         {
-            this.GetComponent<SpriteRenderer>().sprite = ButtonEncyclopedia.BS.RetrieveSprite(bt, 8);
-            
+            BlockVisual.GetComponent<SpriteRenderer>().sprite = ButtonEncyclopedia.BS.RetrieveSprite(bt, 8);
+            //set sprite to be Start 
         }
 
         else
         {
-            this.GetComponent<SpriteRenderer>().sprite = ButtonEncyclopedia.BS.RetrieveSprite(bt, 9);
-          
+            BlockVisual.GetComponent<SpriteRenderer>().sprite = ButtonEncyclopedia.BS.RetrieveSprite(bt, 9);
+            //set block sprite to be END
         }
-      
+
+
+        BlockVisual.gameObject.transform.position = new Vector2(this.transform.position.x, this.transform.position.y + yoffset);
     }
 
     public bool isBlank()

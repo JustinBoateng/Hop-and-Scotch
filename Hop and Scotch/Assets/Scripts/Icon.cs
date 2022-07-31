@@ -7,7 +7,7 @@ public class Icon : MonoBehaviour
     public string Name;
     public Sprite Visual;
     public string Description;
-    public string Code;
+    public string[] Code;
 
     public string getName()
     {
@@ -19,9 +19,9 @@ public class Icon : MonoBehaviour
         return Description;
     }
 
-    public string getCode()
+    public string getCode(int i)
     {
-        return Code;
+        return Code[i];
     }
 
     public Sprite getSprite()

@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Character B
-  Visual: {fileID: 21300000, guid: f871a85f37c84974b857f20fd3187760, type: 3}
-  Description: A Legendary Hunter
-  Code: CHARB
+  Visual: {fileID: 21300000, guid: 4fc1c0070cfea2e46b1f0fe81e1f39d9, type: 3}
+  Description: A Legendary Guardian
+  Code:
+  - RHC2C
+  - RHC1C

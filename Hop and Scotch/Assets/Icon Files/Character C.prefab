@@ -44,6 +44,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Name: Character C
-  Visual: {fileID: 21300000, guid: 7132e4cf1d53f544088d2348fa5b3565, type: 3}
-  Description: A Legendary Scientist
-  Code: CHARC
+  Visual: {fileID: 21300000, guid: 354219cace621f440aee2190ac1ba564, type: 3}
+  Description: A Legendary Thief
+  Code:
+  - RHC2C
+  - RHC1C

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class CharMenuManager : MonoBehaviour
 {
@@ -23,11 +24,14 @@ public class CharMenuManager : MonoBehaviour
     public int selectedfirst = -1;
     public float hor;
 
+    public string StageCode = "SAMPLE";
+
+
     private void Awake()
     {
         if (CMM == null)
         {
-            DontDestroyOnLoad(gameObject);
+            //DontDestroyOnLoad(gameObject);
             CMM = this;
         }
 
@@ -51,6 +55,7 @@ public class CharMenuManager : MonoBehaviour
 
         //Revert who selected first back to -1
         if (selectedfirst != -1)
+        {
             if (Input.GetButton("P" + selectedfirst + " Cancel"))
             {
                 selectedfirst = -1;
@@ -59,6 +64,13 @@ public class CharMenuManager : MonoBehaviour
                 Players[0].resetFrame();
                 Players[1].resetFrame();
             }
+
+            if (Input.GetButton("P" + selectedfirst + " Submit") && allcharsselected)
+            {
+                MultiPlayerTransition();
+            }
+
+        }
         //if one player HAS chosen (!= -1) and the other player HASN'T (== -1) 
         if (Players[0].CharSelected != -1 && Players[1].CharSelected == -1)
             selectedfirst = 1;
@@ -68,12 +80,13 @@ public class CharMenuManager : MonoBehaviour
 
 
 
-        if (Players[0].CharSelected != -1 && Players[1].CharSelected != -1)        
+        if (Players[0].FullSelected && Players[1].FullSelected)        
             allcharsselected = true;
         
 
         if (allcharsselected)
         {
+            //if(StageSelectMenu != null)
             StageSelectMenu.gameObject.SetActive(true);
         }
 
@@ -81,6 +94,8 @@ public class CharMenuManager : MonoBehaviour
         {
             StageMovement();
         }
+
+
 
     }
 
@@ -104,6 +119,7 @@ public class CharMenuManager : MonoBehaviour
 
             else if (hor == 1)
             {
+                Debug.Log("Right Detected");
                 if (currStage < StageArray.Length - 1)
                     currStage = currStage + 1;
                 else
@@ -115,7 +131,7 @@ public class CharMenuManager : MonoBehaviour
             inputcheck = true;
         }
 
-        if (hor == 0) inputcheck = false;
+        if ((hor != -1 && hor != 1)) inputcheck = false;
     }
 
     public void UpdateStage(int i)
@@ -129,4 +145,26 @@ public class CharMenuManager : MonoBehaviour
     {
         NoofPlayers = x;
     }
+
+    public RuntimeAnimatorController IconSampleUpdate(string CC)
+    {
+        return AnimationDictionary.AD.SpriteRetrieval(CC);
+    }
+
+
+
+    public void MultiPlayerTransition()
+    {
+        //set the Character codes to the TransitionManager
+        TransitionManager.TM.SetAnimationCodes(Players[0].ColorSelected, Players[1].ColorSelected);
+
+        //Go to the next Scene
+
+        StageSelectMenu.gameObject.SetActive(false);
+        SceneManager.LoadScene("MultiPlayer-GameScene");
+
+        //The GameManager sets the Codes to the players at Start
+    }
+
+
 }

@@ -43,7 +43,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c55742c3d73274aabbb928de4ba558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Character A
-  Visual: {fileID: 21300000, guid: 15b73870053ac2840b3fd36f16243ab2, type: 3}
-  Description: A Legendary Thief
-  Code: CHARA
+  Name: Hop
+  Visual: {fileID: 21300000, guid: f32bb57ac50132f4d9ad3bf52fe062b9, type: 3}
+  Description: A prominent thief that has made a name for himself
+  Code:
+  - RHC1C
+  - RHC2C

@@ -49,6 +49,9 @@ public class GameManager : MonoBehaviour
 
     public bool ResetFlag = false;
 
+    public string playeronecode;
+    public string playertwocode;
+
     private void Awake()
     {
         if (GM == null)
@@ -65,6 +68,8 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        EstablishPlayers();
+
         TimerSeconds = 0;
         NoofPlayers = Players.Length;
 
@@ -78,7 +83,7 @@ public class GameManager : MonoBehaviour
         DrawSprite.gameObject.SetActive(false);
 
         //WM = WinnerMenu.WM;
-        Debug.Log("Hidding Win Screen");
+        //Debug.Log("Hidding Win Screen");
         WM.Reset();
         WM.gameObject.SetActive(false);
         FadeInFlag = true;
@@ -87,6 +92,8 @@ public class GameManager : MonoBehaviour
 
         Winner = -1;
         Decision = false;
+
+
     }
 
     // Update is called once per frame
@@ -160,7 +167,7 @@ public class GameManager : MonoBehaviour
 
         else if (WinnerMenuPopupFlag && WMPTimer >= MaxWMPT)
         {
-            Debug.Log("Win Screen Pops up");
+            //Debug.Log("Win Screen Pops up");
             WM.gameObject.SetActive(true);
             //WM.setupResults(Winner);
             WM.SlideTheWinner();
@@ -282,4 +289,23 @@ public class GameManager : MonoBehaviour
         TimerUpdate();
 
     }
+
+    public void SetCodes(string firstplayer, string secondplayer)
+    {
+        playeronecode = firstplayer;
+        playertwocode = secondplayer;
+
+    }//this is activated in the CharMenu
+
+    public void EstablishPlayers()
+    {
+
+
+        Players[0].GetAnimation(TransitionManager.TM.GetAnimationCodes(0));
+        Players[0].SetAnimation();
+
+        Players[1].GetAnimation(TransitionManager.TM.GetAnimationCodes(1));
+        Players[1].SetAnimation();
+
+    }//this is activated at the start of the Game Scene
 }

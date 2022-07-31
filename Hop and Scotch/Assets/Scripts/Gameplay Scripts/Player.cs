@@ -56,9 +56,9 @@ public class Player : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SetAnimation();
         Win = false;
         Lose = false;
+        
         for (int i = 0; i < AnimationDictionary.AD.AnimationArray.Length; i++) {
             Debug.Log("Comparing " + AnimationDictionary.AD.AnimationArray[i].name + " to " + AnimationCode);
             if (AnimationDictionary.AD.AnimationArray[i].name == AnimationCode)
@@ -67,6 +67,7 @@ public class Player : MonoBehaviour
                 break;
             }
         }
+        
     }
 
     // Update is called once per frame
@@ -164,6 +165,12 @@ public class Player : MonoBehaviour
         animator.SetFloat("TripLag", triplag);
     }
 
+    public void GetAnimation(string code)
+    {
+       AnimationCode = code;
+       //GetComponent<Animator>().runtimeAnimatorController = AnimationDictionary.AD.SpriteRetrieval(code);
+    }
+
 
     public void JumpReset()
     {
@@ -229,7 +236,7 @@ public class Player : MonoBehaviour
         }
 
         if (inputted && (CourseRef.getBP().currentspot < CourseRef.path.Length)) {
-            if (input == CourseRef.nextSpot() || CourseRef.nextSpot() == '9')
+            if (input == CourseRef.nextSpot() || CourseRef.nextSpot() == '7' || CourseRef.nextSpot() == '9')
             {
                 //Debug.Log("Correct");
 
@@ -238,8 +245,8 @@ public class Player : MonoBehaviour
 
                 if (!Leap)
                 {
-                    SetPoints();
-                    JumpPathTransfer();
+                    SetPoints(); //set the destination (from, To, And inbetween)
+                    JumpPathTransfer();//store that information so that subsequent presses can be stored without changing current trajectory
                     Leap = true;
                 }
 
@@ -281,6 +288,7 @@ public class Player : MonoBehaviour
             pointB.position = new Vector2((pointC.position.x + pointA.position.x) / 2, CourseRef.transform.position.y + jumpheight);
         //JumpHeight is relative to the position of the course
 
+        //HopLevel keeps track of the animation to use while hoping
             HopLevel = (int) Mathf.Abs(pointC.transform.position.x - pointA.transform.position.x);
             
     }
