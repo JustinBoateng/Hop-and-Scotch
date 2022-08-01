@@ -47,3 +47,6 @@ TagManager:
   - name: Building Layers
     uniqueID: 1980652181
     locked: 0
+  - name: Spot Layer
+    uniqueID: 1820195135
+    locked: 0

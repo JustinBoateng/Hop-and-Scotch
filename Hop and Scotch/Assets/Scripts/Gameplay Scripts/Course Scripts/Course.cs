@@ -15,7 +15,13 @@ public class Course : MonoBehaviour
 
 
     public GameObject BlockFolder;
-    public GameObject BlockPrefab;
+    public GameObject StartBlockPrefab;
+    public GameObject FinishBlockPrefab;
+    public Spot CurrentBlockPrefab;
+
+    public int CurrSpotType = 1;
+    public int TempCurrSpotType = 0;
+    public int SpotTypeCounter = 8;
 
     public float SpotPosTracker;
     public float SpotOffset;
@@ -53,7 +59,45 @@ public class Course : MonoBehaviour
         {
             //Debug.Log("Placing Log #" + i);
 
-            GameObject s = Instantiate(BlockPrefab, new Vector2(SpotPosTracker, this.transform.position.y), this.transform.rotation);
+            //if you meet a gap, change the type of spot from basic to fenced
+            if(path[i] == '0')
+            {
+                if (CurrSpotType == 0) CurrSpotType = 1;
+                else if (CurrSpotType == 1) CurrSpotType = 2;
+                else if (CurrSpotType == 2) CurrSpotType = 0;
+                else CurrSpotType = 0;
+            }
+
+            //the special spot is to be placed once. revert back to the current spot type
+            if(CurrSpotType != 0 && CurrSpotType != 1 && CurrSpotType != 2)
+            {
+                CurrSpotType = TempCurrSpotType;
+                TempCurrSpotType = 0;
+                SpotTypeCounter = Random.Range(7,10);
+            }
+
+            //this is to periodically place one of the special spots with the items on it
+            if (SpotTypeCounter <= 0)
+            {
+                TempCurrSpotType = CurrSpotType;
+                CurrSpotType = Random.Range(3,5);//A random number from 3 4 or 5
+            }
+
+
+            //Now to check the point of the path we're in
+            if (i - 1 >= 0 && i + 1 < path.Length)
+                CurrentBlockPrefab = SpotEncyclopedia.SE.SpotRetrieval("RR", CurrSpotType, path[i - 1], path[i + 1]);
+
+            else if (i == 0)
+                CurrentBlockPrefab = SpotEncyclopedia.SE.SpotRetrieval("RR", CurrSpotType, '1', path[i + 1]);
+            
+            else CurrentBlockPrefab = SpotEncyclopedia.SE.SpotRetrieval("RR", CurrSpotType, path[i - 1], '1');
+            
+
+            //spawn a new block
+            GameObject s = Instantiate(CurrentBlockPrefab.gameObject, new Vector2(SpotPosTracker, this.transform.position.y), this.transform.rotation);
+
+
             SpotPosTracker = SpotPosTracker + SpotOffset; //handles the x offset position
 
             s.GetComponent<Spot>().setButt(buttonType, path[i], yoffset); //sets the sprite of the spot block, and also the button prompt
@@ -63,6 +107,8 @@ public class Course : MonoBehaviour
             //s.transform.position = new Vector2(s.transform.position.x, s.transform.position.y + yoffset);
 
             CourseSpotForme[i] = s;
+
+            SpotTypeCounter--;
         }
         //now the course should be built
 

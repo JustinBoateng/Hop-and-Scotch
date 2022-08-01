@@ -722,7 +722,7 @@ TextureImporter:
         x: 1968
         y: 155
         width: 203
-        height: 594
+        height: 634
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -743,7 +743,7 @@ TextureImporter:
         x: 2255
         y: 155
         width: 203
-        height: 594
+        height: 634
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -761,10 +761,10 @@ TextureImporter:
       name: Rooftop Rush Background Pt B_38
       rect:
         serializedVersion: 2
-        x: 2540
-        y: 155
+        x: 2541
+        y: 154
         width: 203
-        height: 594
+        height: 634
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -785,7 +785,7 @@ TextureImporter:
         x: 2819
         y: 155
         width: 203
-        height: 594
+        height: 629
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -806,7 +806,7 @@ TextureImporter:
         x: 3097
         y: 155
         width: 203
-        height: 594
+        height: 630
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -827,7 +827,7 @@ TextureImporter:
         x: 3342
         y: 155
         width: 203
-        height: 594
+        height: 629
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -848,7 +848,7 @@ TextureImporter:
         x: 3595
         y: 155
         width: 204
-        height: 594
+        height: 630
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
