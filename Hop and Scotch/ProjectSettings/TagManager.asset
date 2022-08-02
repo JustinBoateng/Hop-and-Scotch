@@ -50,3 +50,6 @@ TagManager:
   - name: Spot Layer
     uniqueID: 1820195135
     locked: 0
+  - name: Courses Folder Layer
+    uniqueID: 421138483
+    locked: 0
