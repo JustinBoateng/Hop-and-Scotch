@@ -6,6 +6,7 @@ public class Course : MonoBehaviour
 {
     public char[] path;
     public string course = "8323452401231241231230142323012421304123419";
+    public string StageCode = "RR";
     public int buttonType;
     //0-empty 1-button 2-button 3-button 4-button 5-button 6-button 7-freespace 8-start 9-end
 
@@ -86,12 +87,12 @@ public class Course : MonoBehaviour
 
             //Now to check the point of the path we're in
             if (i - 1 >= 0 && i + 1 < path.Length)
-                CurrentBlockPrefab = SpotEncyclopedia.SE.SpotRetrieval("RR", CurrSpotType, path[i - 1], path[i + 1]);
+                CurrentBlockPrefab = SpotEncyclopedia.SE.SpotRetrieval(StageCode, CurrSpotType, path[i - 1], path[i + 1]);
 
             else if (i == 0)
-                CurrentBlockPrefab = SpotEncyclopedia.SE.SpotRetrieval("RR", CurrSpotType, '1', path[i + 1]);
+                CurrentBlockPrefab = SpotEncyclopedia.SE.SpotRetrieval(StageCode, CurrSpotType, '1', path[i + 1]);
             
-            else CurrentBlockPrefab = SpotEncyclopedia.SE.SpotRetrieval("RR", CurrSpotType, path[i - 1], '1');
+            else CurrentBlockPrefab = SpotEncyclopedia.SE.SpotRetrieval(StageCode, CurrSpotType, path[i - 1], '1');
             
 
             //spawn a new block

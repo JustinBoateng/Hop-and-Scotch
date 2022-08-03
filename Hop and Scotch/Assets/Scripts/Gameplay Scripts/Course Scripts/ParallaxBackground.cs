@@ -13,9 +13,11 @@ public class ParallaxBackground : MonoBehaviour
 
     [SerializeField] private Vector2 parallaxEffectMultiplier ;
 
+    public int PlayerNumber;
     // Start is called before the first frame update
     void Start()
     {
+        cameraTransform = GameObject.Find("P" + PlayerNumber + " Camera").transform;
         lastCameraPosition = cameraTransform.position;
     }
 

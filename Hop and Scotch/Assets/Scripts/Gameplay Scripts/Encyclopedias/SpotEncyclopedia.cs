@@ -137,6 +137,11 @@ public class SpotEncyclopedia : MonoBehaviour
             
         }
 
+        if(Stage == "")
+        {
+
+        }//You'll need to make custom rules for different stages since you don't know the types of spots or the context of the spots that can spawn
+
 
         return RooftopRushSpotArray[1];
     }
