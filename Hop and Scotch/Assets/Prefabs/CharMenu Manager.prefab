@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3567689191615647316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3567689191615647318}
+  - component: {fileID: 3567689191615647317}
+  m_Layer: 0
+  m_Name: CharMenu Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3567689191615647318
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3567689191615647316}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 235.23894, y: 123.28956, z: -6.2569985}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3567689191615647317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3567689191615647316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b4f36c71d8c368644900542dad7b0dc6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Characters:
+  - {fileID: 2530932878991043274, guid: d8d9f04e5baf5a24e9f42ec650ec8862, type: 3}
+  - {fileID: 2479486164929865763, guid: 2e9b85fd5d08d4d4c81f3e8443e158db, type: 3}
+  - {fileID: 1346164602794720881, guid: 77a723dbbbf189547bd11758406e5bca, type: 3}
+  Players:
+  - {fileID: 0}
+  - {fileID: 0}
+  NoofPlayers: 2
+  allcharsselected: 0
+  StageSelectMenu: {fileID: 0}
+  currStage: 0
+  StageArray:
+  - {fileID: 8759924458494171114, guid: d6cd94bce7da4ed4fa6ab97bc1a1cd08, type: 3}
+  - {fileID: 5044499448927578415, guid: 824968753b96e0140bd29930cef18fc1, type: 3}
+  - {fileID: 9045930759392537301, guid: 4c2b2b359180fe94a82e29b30c0106ab, type: 3}
+  StageVisual: {fileID: 0}
+  StageDesc: {fileID: 0}
+  inputcheck: 0
+  selectedfirst: -1
+  hor: 0
+  StageCode: SAMPLE

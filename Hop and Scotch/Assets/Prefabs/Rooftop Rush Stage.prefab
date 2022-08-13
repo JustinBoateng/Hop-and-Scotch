@@ -7396,6 +7396,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8283216967582509487}
   - component: {fileID: 8283216967582509486}
+  - component: {fileID: 5489696886876015361}
   m_Layer: 0
   m_Name: Foreground
   m_TagString: Untagged
@@ -7429,6 +7430,21 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
+--- !u!114 &5489696886876015361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8283216967582509484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 466dd62a597673245b04146cbb7dc2da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraTransform: {fileID: 0}
+  parallaxEffectMultiplier: {x: 0, y: 0}
+  PlayerNumber: 2
 --- !u!1 &8283216967584557875
 GameObject:
   m_ObjectHideFlags: 0
@@ -7963,6 +7979,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8283216967666806428}
   - component: {fileID: 8283216967666806431}
+  - component: {fileID: 7091844998654036093}
   m_Layer: 0
   m_Name: Foreground
   m_TagString: Untagged
@@ -7996,6 +8013,21 @@ SortingGroup:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 3
+--- !u!114 &7091844998654036093
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8283216967666806429}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 466dd62a597673245b04146cbb7dc2da, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cameraTransform: {fileID: 0}
+  parallaxEffectMultiplier: {x: 0, y: 0}
+  PlayerNumber: 1
 --- !u!1 &8283216967683110313
 GameObject:
   m_ObjectHideFlags: 0
@@ -12263,7 +12295,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 0}
-  parallaxEffectMultiplier: {x: 0, y: 0}
+  parallaxEffectMultiplier: {x: 1, y: 0}
   PlayerNumber: 2
 --- !u!1 &8283216968466059016
 GameObject:
@@ -21328,7 +21360,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraTransform: {fileID: 0}
-  parallaxEffectMultiplier: {x: 0, y: 0}
+  parallaxEffectMultiplier: {x: 1, y: 0}
   PlayerNumber: 1
 --- !u!1 &8283216969247449289
 GameObject:

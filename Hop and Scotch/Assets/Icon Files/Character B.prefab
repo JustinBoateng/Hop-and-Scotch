@@ -43,7 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 71c55742c3d73274aabbb928de4ba558, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Name: Character B
+  Name: Scotch
   Visual: {fileID: 21300000, guid: 4fc1c0070cfea2e46b1f0fe81e1f39d9, type: 3}
   Description: A Legendary Guardian
   Code:

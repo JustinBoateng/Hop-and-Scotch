@@ -1,12 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Player : MonoBehaviour
 {
     public Course CourseRef;
 
-    char input = 'Z';
+    public char input = 'Z';
     bool inputted = false;
 
     public Transform pointA;
@@ -75,15 +76,7 @@ public class Player : MonoBehaviour
     {
         SetAnimation();
         
-        if (Input.GetButtonDown("P" + PlayerNumber + " Pause") && !PauseMenu.PM.isPaused && !GameManager.GM.WinnerDecided)
-        {
-            PauseMenu.PM.Pause();
-        }
-
-        else if (Input.GetButtonDown("P" + PlayerNumber + " Pause") && PauseMenu.PM.isPaused)
-        { 
-            PauseMenu.PM.Resume();
-        }
+      
 
 
         if (!PauseMenu.PM.isPaused)
@@ -95,8 +88,10 @@ public class Player : MonoBehaviour
             }
 
             //inputs are registered if player hasm't tripped, the game isn't paused, and it is after the countdown but before a winner has been decided
-            if (!trip && GameManager.GM.PlayersCanMove)
-                InputEval();
+            //if (!trip && GameManager.GM.PlayersCanMove)
+            //    InputEval();
+            //The Inputs are handled here///////////////////////////////////////////////////////////////
+
 
             else if (trip) tripCalc();
 
@@ -199,6 +194,7 @@ public class Player : MonoBehaviour
 
     public void InputEval()
     {
+        /*
         if (Input.GetButtonDown(PlayerNumber + "A") && !inputted)
         {
             input = '1';
@@ -234,6 +230,7 @@ public class Player : MonoBehaviour
             input = '6';
             inputted = true;
         }
+        */
 
         if (inputted && (CourseRef.getBP().currentspot < CourseRef.path.Length)) {
             if (input == CourseRef.nextSpot() || CourseRef.nextSpot() == '7' || CourseRef.nextSpot() == '9')
@@ -334,4 +331,85 @@ public class Player : MonoBehaviour
             }
         }
     }
+
+
+    private void OnA(InputValue Value)
+    {
+        if (!trip && GameManager.GM.PlayersCanMove)
+        {
+            input = '1';
+            Debug.Log(input);
+            inputted = true;
+            InputEval();
+        }
+    }
+
+    private void OnB(InputValue Value)
+    {
+        if (!trip && GameManager.GM.PlayersCanMove)
+        {
+            input = '2';
+            Debug.Log(input);
+            inputted = true;
+            InputEval();
+        }
+    }
+
+
+    private void OnX(InputValue Value)
+    {
+        if (!trip && GameManager.GM.PlayersCanMove)
+        {
+            input = '3';
+            Debug.Log(input);
+            inputted = true;
+            InputEval();
+        }
+    }
+
+    private void OnY(InputValue Value)
+    {
+        if (!trip && GameManager.GM.PlayersCanMove)
+        {
+            input = '4';
+            Debug.Log(input);
+            inputted = true;
+            InputEval();
+        }
+    }
+
+
+    private void OnL(InputValue Value)
+    {
+        if (!trip && GameManager.GM.PlayersCanMove)
+        {
+            input = '5';
+            Debug.Log(input);
+            inputted = true;
+            InputEval();
+        }
+    }
+
+    private void OnR(InputValue Value)
+    {
+        if (!trip && GameManager.GM.PlayersCanMove)
+        {
+            input = '6';
+            Debug.Log(input);
+            inputted = true;
+            InputEval();
+        }
+    }
+
+    private void OnPause(InputValue Value)
+    {
+        if (!PauseMenu.PM.isPaused && !GameManager.GM.WinnerDecided)
+            PauseMenu.PM.Pause();
+
+        else if (PauseMenu.PM.isPaused)
+        {
+            PauseMenu.PM.Resume();
+        }
+    }
+
 }

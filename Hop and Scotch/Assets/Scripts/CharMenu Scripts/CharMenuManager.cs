@@ -65,7 +65,7 @@ public class CharMenuManager : MonoBehaviour
                 Players[1].resetFrame();
             }
 
-            if (Input.GetButton("P" + selectedfirst + " Submit") && allcharsselected)
+            else if (Input.GetButton("P" + selectedfirst + " Submit") && allcharsselected)
             {
                 MultiPlayerTransition();
             }
@@ -161,7 +161,8 @@ public class CharMenuManager : MonoBehaviour
         //Go to the next Scene
 
         StageSelectMenu.gameObject.SetActive(false);
-        SceneManager.LoadScene("MultiPlayer-GameScene");
+
+        TransitionManager.TM.MultiPlayerTransition();
 
         //The GameManager sets the Codes to the players at Start
     }
