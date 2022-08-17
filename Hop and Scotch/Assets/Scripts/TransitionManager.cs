@@ -53,7 +53,9 @@ public class TransitionManager : MonoBehaviour
     {
         if (FadeInFlag && FadeValue > 0) FadeIn();
         if (FadeOutFlag && FadeValue <= 100) FadeOut();
-
+        //other classes trigger the fadeIn/FadeOut flags.
+        //100 means the black screen is fully there. > 0 checks for that very case.
+        //0 means the black screen is completely see through. <= checks for that before fading out (fading to black)
     }
 
     public void SetAnimationCodes (string A, string B)
@@ -96,7 +98,13 @@ public class TransitionManager : MonoBehaviour
             FadeOutFlag = false;
             FadeInFlag = true;
 
-            SceneManager.LoadScene(NextScene);
+            if (GameManager.GM)
+            {
+                if (GameManager.GM.ResetFlag && GameManager.GM.NoofPlayers == 1) GameManager.GM.ResetSinglePlayer();
+                else if (GameManager.GM.ResetFlag && GameManager.GM.NoofPlayers == 2) GameManager.GM.ResetMultiPlayer();
+                else SceneManager.LoadScene(NextScene);
+            }
+            else SceneManager.LoadScene(NextScene);
         }
     }
 
@@ -124,5 +132,17 @@ public class TransitionManager : MonoBehaviour
         NextScene = "SinglePlayer-GameScene";
 
         //The GameManager sets the Codes to the players at Start
+    }
+
+    public void Exit()
+    {
+        FadeOutFlag = true;
+        NextScene = "TitleandMain-Scene";
+    }
+
+    public void CharSelect()
+    {
+        FadeOutFlag = true;
+        NextScene = "Character-Select-Scene";
     }
 }

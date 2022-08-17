@@ -14,6 +14,8 @@ public class ButtonTester : MonoBehaviour
 
     [SerializeField] Button ButtConfig;
 
+    //public InputAction PlayerControls;
+    //public InputActionAsset IAA;
 
     Color BaseColor;
     byte ChangedColorR;
@@ -43,6 +45,8 @@ public class ButtonTester : MonoBehaviour
             ChangedColorA = 255;
         }
         PressedColor = new Color32 (ChangedColorR, ChangedColorG, ChangedColorB, 255);
+
+        //PlayerControls.a = IAA.FindActionMap("PlayerOne-Game");
     }
 
     // Update is called once per frame
@@ -114,9 +118,11 @@ public class ButtonTester : MonoBehaviour
         */ 
     }
 
+    /*
     public void OnA(InputAction.CallbackContext context)
     {
         //ButtonList[0].GetComponent<Image>().color = PressedColor;
+        Debug.Log("A pressed");
 
         switch (context.phase)
         {
@@ -296,4 +302,374 @@ public class ButtonTester : MonoBehaviour
                 break;
         }
     }
+
+    */
+    public void OnA1(InputAction.CallbackContext context)
+    {
+        //ButtonList[0].GetComponent<Image>().color = PressedColor;
+
+        switch (context.phase)
+        {
+            case InputActionPhase.Started:
+                Debug.Log(context.interaction + " - Started");
+                ButtonList[0].GetComponent<Image>().color = PressedColor;
+                break;
+
+            case InputActionPhase.Performed:
+                Debug.Log(context.interaction + " - Performed");
+
+                if (context.interaction is SlowTapInteraction)
+                ButtonList[0].GetComponent<Image>().color = BaseColor;
+
+                else if (context.interaction is TapInteraction)
+                    ButtonList[0].GetComponent<Image>().color = BaseColor;
+                break;
+
+            case InputActionPhase.Canceled:
+                Debug.Log(context.interaction + " - Canceled");
+                if (context.interaction is TapInteraction)
+                    ButtonList[0].GetComponent<Image>().color = BaseColor;
+
+                else if (context.interaction is SlowTapInteraction)
+                    ButtonList[0].GetComponent<Image>().color = BaseColor;
+                break;
+        }
+
+    }
+
+    public void OnB1(InputAction.CallbackContext context)
+    {
+        switch (context.phase)
+        {
+            case InputActionPhase.Started:
+                //Debug.Log(context.interaction + " - Started");
+                ButtonList[1].GetComponent<Image>().color = PressedColor;
+                break;
+
+            case InputActionPhase.Performed:
+                //Debug.Log(context.interaction + " - Performed");
+
+                if (context.interaction is SlowTapInteraction)
+                    ButtonList[1].GetComponent<Image>().color = BaseColor;
+
+                else if (context.interaction is TapInteraction)
+                    ButtonList[1].GetComponent<Image>().color = BaseColor;
+                break;
+
+            case InputActionPhase.Canceled:
+                //Debug.Log(context.interaction + " - Canceled");
+                if (context.interaction is TapInteraction)
+                    ButtonList[1].GetComponent<Image>().color = BaseColor;
+
+                else if (context.interaction is SlowTapInteraction)
+                    ButtonList[1].GetComponent<Image>().color = BaseColor;
+                break;
+        }
+    }
+
+    public void OnX1(InputAction.CallbackContext context)
+    {
+        switch (context.phase)
+        {
+            case InputActionPhase.Started:
+                //Debug.Log(context.interaction + " - Started");
+                ButtonList[2].GetComponent<Image>().color = PressedColor;
+                break;
+
+            case InputActionPhase.Performed:
+                //Debug.Log(context.interaction + " - Performed");
+
+                if (context.interaction is SlowTapInteraction)
+                    ButtonList[2].GetComponent<Image>().color = BaseColor;
+
+                else if (context.interaction is TapInteraction)
+                    ButtonList[2].GetComponent<Image>().color = BaseColor;
+                break;
+
+            case InputActionPhase.Canceled:
+                //Debug.Log(context.interaction + " - Canceled");
+                if (context.interaction is TapInteraction)
+                    ButtonList[2].GetComponent<Image>().color = BaseColor;
+
+                else if (context.interaction is SlowTapInteraction)
+                    ButtonList[2].GetComponent<Image>().color = BaseColor;
+                break;
+        }
+    }
+
+    public void OnY1(InputAction.CallbackContext context)
+    {
+        switch (context.phase)
+        {
+            case InputActionPhase.Started:
+                //Debug.Log(context.interaction + " - Started");
+                ButtonList[3].GetComponent<Image>().color = PressedColor;
+                break;
+
+            case InputActionPhase.Performed:
+                //Debug.Log(context.interaction + " - Performed");
+
+                if (context.interaction is SlowTapInteraction)
+                    ButtonList[3].GetComponent<Image>().color = BaseColor;
+
+                else if (context.interaction is TapInteraction)
+                    ButtonList[3].GetComponent<Image>().color = BaseColor;
+                break;
+
+            case InputActionPhase.Canceled:
+                //Debug.Log(context.interaction + " - Canceled");
+                if (context.interaction is TapInteraction)
+                    ButtonList[3].GetComponent<Image>().color = BaseColor;
+
+                else if (context.interaction is SlowTapInteraction)
+                    ButtonList[3].GetComponent<Image>().color = BaseColor;
+                break;
+        }
+    }
+
+    public void OnL1(InputAction.CallbackContext context)
+    {
+        switch (context.phase)
+        {
+            case InputActionPhase.Started:
+                //Debug.Log(context.interaction + " - Started");
+                ButtonList[4].GetComponent<Image>().color = PressedColor;
+                break;
+
+            case InputActionPhase.Performed:
+                //Debug.Log(context.interaction + " - Performed");
+
+                if (context.interaction is SlowTapInteraction)
+                    ButtonList[4].GetComponent<Image>().color = BaseColor;
+
+                else if (context.interaction is TapInteraction)
+                    ButtonList[4].GetComponent<Image>().color = BaseColor;
+                break;
+
+            case InputActionPhase.Canceled:
+                //Debug.Log(context.interaction + " - Canceled");
+                if (context.interaction is TapInteraction)
+                    ButtonList[4].GetComponent<Image>().color = BaseColor;
+
+                else if (context.interaction is SlowTapInteraction)
+                    ButtonList[4].GetComponent<Image>().color = BaseColor;
+                break;
+        }
+    }
+
+    public void OnR1(InputAction.CallbackContext context)
+    {
+        switch (context.phase)
+        {
+            case InputActionPhase.Started:
+                //Debug.Log(context.interaction + " - Started");
+                ButtonList[5].GetComponent<Image>().color = PressedColor;
+                break;
+
+            case InputActionPhase.Performed:
+                //Debug.Log(context.interaction + " - Performed");
+
+                if (context.interaction is SlowTapInteraction)
+                    ButtonList[5].GetComponent<Image>().color = BaseColor;
+
+                else if (context.interaction is TapInteraction)
+                    ButtonList[5].GetComponent<Image>().color = BaseColor;
+                break;
+
+            case InputActionPhase.Canceled:
+                //Debug.Log(context.interaction + " - Canceled");
+                if (context.interaction is TapInteraction)
+                    ButtonList[5].GetComponent<Image>().color = BaseColor;
+
+                else if (context.interaction is SlowTapInteraction)
+                    ButtonList[5].GetComponent<Image>().color = BaseColor;
+                break;
+        }
+    }
+
+    public void OnA2(InputAction.CallbackContext context)
+    {
+        //ButtonList[0].GetComponent<Image>().color = PressedColor;
+
+        switch (context.phase)
+        {
+            case InputActionPhase.Started:
+                Debug.Log(context.interaction + " - Started");
+                ButtonList[0].GetComponent<Image>().color = PressedColor;
+                break;
+
+            case InputActionPhase.Performed:
+                Debug.Log(context.interaction + " - Performed");
+
+                if (context.interaction is SlowTapInteraction)
+                    ButtonList[0].GetComponent<Image>().color = BaseColor;
+
+                else if (context.interaction is TapInteraction)
+                    ButtonList[0].GetComponent<Image>().color = BaseColor;
+                break;
+
+            case InputActionPhase.Canceled:
+                Debug.Log(context.interaction + " - Canceled");
+                if (context.interaction is TapInteraction)
+                    ButtonList[0].GetComponent<Image>().color = BaseColor;
+
+                else if (context.interaction is SlowTapInteraction)
+                    ButtonList[0].GetComponent<Image>().color = BaseColor;
+                break;
+        }
+
+    }
+
+    public void OnB2(InputAction.CallbackContext context)
+    {
+        switch (context.phase)
+        {
+            case InputActionPhase.Started:
+                //Debug.Log(context.interaction + " - Started");
+                ButtonList[1].GetComponent<Image>().color = PressedColor;
+                break;
+
+            case InputActionPhase.Performed:
+                //Debug.Log(context.interaction + " - Performed");
+
+                if (context.interaction is SlowTapInteraction)
+                    ButtonList[1].GetComponent<Image>().color = BaseColor;
+
+                else if (context.interaction is TapInteraction)
+                    ButtonList[1].GetComponent<Image>().color = BaseColor;
+                break;
+
+            case InputActionPhase.Canceled:
+                //Debug.Log(context.interaction + " - Canceled");
+                if (context.interaction is TapInteraction)
+                    ButtonList[1].GetComponent<Image>().color = BaseColor;
+
+                else if (context.interaction is SlowTapInteraction)
+                    ButtonList[1].GetComponent<Image>().color = BaseColor;
+                break;
+        }
+    }
+
+    public void OnX2(InputAction.CallbackContext context)
+    {
+        switch (context.phase)
+        {
+            case InputActionPhase.Started:
+                //Debug.Log(context.interaction + " - Started");
+                ButtonList[2].GetComponent<Image>().color = PressedColor;
+                break;
+
+            case InputActionPhase.Performed:
+                //Debug.Log(context.interaction + " - Performed");
+
+                if (context.interaction is SlowTapInteraction)
+                    ButtonList[2].GetComponent<Image>().color = BaseColor;
+
+                else if (context.interaction is TapInteraction)
+                    ButtonList[2].GetComponent<Image>().color = BaseColor;
+                break;
+
+            case InputActionPhase.Canceled:
+                //Debug.Log(context.interaction + " - Canceled");
+                if (context.interaction is TapInteraction)
+                    ButtonList[2].GetComponent<Image>().color = BaseColor;
+
+                else if (context.interaction is SlowTapInteraction)
+                    ButtonList[2].GetComponent<Image>().color = BaseColor;
+                break;
+        }
+    }
+
+    public void OnY2(InputAction.CallbackContext context)
+    {
+        switch (context.phase)
+        {
+            case InputActionPhase.Started:
+                //Debug.Log(context.interaction + " - Started");
+                ButtonList[3].GetComponent<Image>().color = PressedColor;
+                break;
+
+            case InputActionPhase.Performed:
+                //Debug.Log(context.interaction + " - Performed");
+
+                if (context.interaction is SlowTapInteraction)
+                    ButtonList[3].GetComponent<Image>().color = BaseColor;
+
+                else if (context.interaction is TapInteraction)
+                    ButtonList[3].GetComponent<Image>().color = BaseColor;
+                break;
+
+            case InputActionPhase.Canceled:
+                //Debug.Log(context.interaction + " - Canceled");
+                if (context.interaction is TapInteraction)
+                    ButtonList[3].GetComponent<Image>().color = BaseColor;
+
+                else if (context.interaction is SlowTapInteraction)
+                    ButtonList[3].GetComponent<Image>().color = BaseColor;
+                break;
+        }
+    }
+
+    public void OnL2(InputAction.CallbackContext context)
+    {
+        switch (context.phase)
+        {
+            case InputActionPhase.Started:
+                //Debug.Log(context.interaction + " - Started");
+                ButtonList[4].GetComponent<Image>().color = PressedColor;
+                break;
+
+            case InputActionPhase.Performed:
+                //Debug.Log(context.interaction + " - Performed");
+
+                if (context.interaction is SlowTapInteraction)
+                    ButtonList[4].GetComponent<Image>().color = BaseColor;
+
+                else if (context.interaction is TapInteraction)
+                    ButtonList[4].GetComponent<Image>().color = BaseColor;
+                break;
+
+            case InputActionPhase.Canceled:
+                //Debug.Log(context.interaction + " - Canceled");
+                if (context.interaction is TapInteraction)
+                    ButtonList[4].GetComponent<Image>().color = BaseColor;
+
+                else if (context.interaction is SlowTapInteraction)
+                    ButtonList[4].GetComponent<Image>().color = BaseColor;
+                break;
+        }
+    }
+
+    public void OnR2(InputAction.CallbackContext context)
+    {
+        switch (context.phase)
+        {
+            case InputActionPhase.Started:
+                //Debug.Log(context.interaction + " - Started");
+                ButtonList[5].GetComponent<Image>().color = PressedColor;
+                break;
+
+            case InputActionPhase.Performed:
+                //Debug.Log(context.interaction + " - Performed");
+
+                if (context.interaction is SlowTapInteraction)
+                    ButtonList[5].GetComponent<Image>().color = BaseColor;
+
+                else if (context.interaction is TapInteraction)
+                    ButtonList[5].GetComponent<Image>().color = BaseColor;
+                break;
+
+            case InputActionPhase.Canceled:
+                //Debug.Log(context.interaction + " - Canceled");
+                if (context.interaction is TapInteraction)
+                    ButtonList[5].GetComponent<Image>().color = BaseColor;
+
+                else if (context.interaction is SlowTapInteraction)
+                    ButtonList[5].GetComponent<Image>().color = BaseColor;
+                break;
+        }
+    }
+
+
+
 }

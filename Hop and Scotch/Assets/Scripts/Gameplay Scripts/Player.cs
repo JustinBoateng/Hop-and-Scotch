@@ -54,6 +54,8 @@ public class Player : MonoBehaviour
 
     public string AnimationCode;
 
+    public PlayerInput PIRef;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -333,8 +335,10 @@ public class Player : MonoBehaviour
     }
 
 
-    private void OnA(InputValue Value)
+    public void OnA1(InputValue V)
     {
+        if (PlayerNumber != 1) return;
+
         if (!trip && GameManager.GM.PlayersCanMove)
         {
             input = '1';
@@ -344,8 +348,10 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnB(InputValue Value)
+    public void OnB1(InputValue V)
     {
+        if (PlayerNumber != 1) return;
+
         if (!trip && GameManager.GM.PlayersCanMove)
         {
             input = '2';
@@ -356,8 +362,10 @@ public class Player : MonoBehaviour
     }
 
 
-    private void OnX(InputValue Value)
+    public void OnX1(InputValue V)
     {
+        if (PlayerNumber != 1) return;
+
         if (!trip && GameManager.GM.PlayersCanMove)
         {
             input = '3';
@@ -367,8 +375,10 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnY(InputValue Value)
+    public void OnY1(InputValue V)
     {
+        if (PlayerNumber != 1) return;
+
         if (!trip && GameManager.GM.PlayersCanMove)
         {
             input = '4';
@@ -379,8 +389,10 @@ public class Player : MonoBehaviour
     }
 
 
-    private void OnL(InputValue Value)
+    public void OnL1(InputValue V)
     {
+        if (PlayerNumber != 1) return;
+
         if (!trip && GameManager.GM.PlayersCanMove)
         {
             input = '5';
@@ -390,8 +402,10 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnR(InputValue Value)
+    public void OnR1(InputValue V)
     {
+        if (PlayerNumber != 1) return;
+
         if (!trip && GameManager.GM.PlayersCanMove)
         {
             input = '6';
@@ -401,15 +415,125 @@ public class Player : MonoBehaviour
         }
     }
 
-    private void OnPause(InputValue Value)
+    public void OnA2(InputValue V)
     {
-        if (!PauseMenu.PM.isPaused && !GameManager.GM.WinnerDecided)
-            PauseMenu.PM.Pause();
+        if (PlayerNumber != 2) return;
 
-        else if (PauseMenu.PM.isPaused)
+
+        if (!trip && GameManager.GM.PlayersCanMove)
         {
-            PauseMenu.PM.Resume();
+            input = '1';
+            Debug.Log(input);
+            inputted = true;
+            InputEval();
         }
     }
 
+    public void OnB2(InputValue V)
+    {
+        if (PlayerNumber != 2) return;
+
+        if (!trip && GameManager.GM.PlayersCanMove)
+        {
+            input = '2';
+            Debug.Log(input);
+            inputted = true;
+            InputEval();
+        }
+    }
+
+
+    public void OnX2(InputValue V)
+    {
+        if (PlayerNumber != 2) return;
+
+        if (!trip && GameManager.GM.PlayersCanMove)
+        {
+            input = '3';
+            Debug.Log(input);
+            inputted = true;
+            InputEval();
+        }
+    }
+
+    public void OnY2(InputValue V)
+    {
+        if (PlayerNumber != 2) return;
+
+        if (!trip && GameManager.GM.PlayersCanMove)
+        {
+            input = '4';
+            Debug.Log(input);
+            inputted = true;
+            InputEval();
+        }
+    }
+
+
+    public void OnL2(InputValue V)
+    {
+        if (PlayerNumber != 2) return;
+
+        if (!trip && GameManager.GM.PlayersCanMove)
+        {
+            input = '5';
+            Debug.Log(input);
+            inputted = true;
+            InputEval();
+        }
+    }
+
+    public void OnR2(InputValue V)
+    {
+        if (PlayerNumber != 2) return;
+
+        if (!trip && GameManager.GM.PlayersCanMove)
+        {
+            input = '6';
+            Debug.Log(input);
+            inputted = true;
+            InputEval();
+        }
+    }
+
+    public void OnPause1(InputValue V)
+    {
+        if (PlayerNumber != 1) return;
+
+        if (!PauseMenu.PM.isPaused && !GameManager.GM.WinnerDecided)
+        {
+            PauseMenu.PM.Pause();
+            Debug.Log("Paused P1");
+            PIRef.SwitchCurrentActionMap("UI");
+            Debug.Log("Current Action Map is: " + PIRef.currentActionMap);
+        }
+        else if (PauseMenu.PM.isPaused)
+        {
+            PauseMenu.PM.Resume();
+            Debug.Log("Paused P1");
+            PIRef.SwitchCurrentActionMap("Game");
+            Debug.Log("Current Action Map is: " + PIRef.currentActionMap);
+        }
+    }
+
+
+    public void OnPause2(InputValue V)
+    {
+        if (PlayerNumber != 2) return;
+
+        if (!PauseMenu.PM.isPaused && !GameManager.GM.WinnerDecided)
+        {
+            PauseMenu.PM.Pause();
+            Debug.Log("Paused P2");
+            PIRef.SwitchCurrentActionMap("UI");
+            Debug.Log("Current Action Map is: " + PIRef.currentActionMap);
+        }
+        else if (PauseMenu.PM.isPaused)
+        {
+            PauseMenu.PM.Resume();
+            Debug.Log("Paused P2");
+            PIRef.SwitchCurrentActionMap("Game");
+            Debug.Log("Current Action Map is: " + PIRef.currentActionMap);
+        }
+    }
 }

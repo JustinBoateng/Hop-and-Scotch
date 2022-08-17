@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.InputSystem;
 public class CharMenuManager : MonoBehaviour
 {
     public Icon[] Characters;
@@ -26,6 +26,10 @@ public class CharMenuManager : MonoBehaviour
 
     public string StageCode = "SAMPLE";
 
+    public InputAction playerControls;
+    public PlayerInput PIReference;
+
+    public float StageSelectFlag = 1f;
 
     private void Awake()
     {
@@ -50,44 +54,36 @@ public class CharMenuManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if((selectedfirst == 1 || selectedfirst == 2) && allcharsselected)
-          hor = Input.GetAxisRaw("P" + selectedfirst + " Horizontal");
+        //Sure we can have PlayerControls go left and right to change what stage to go to
+        //as well as having the CMM seek PlayerInput
+        //but the problem is choosing which player gets to move the menu.
+        //one needs to be active while the other is disabled
+        //it seems that the PlayerControl can contain more than one Vector2 variable..
 
-        //Revert who selected first back to -1
-        if (selectedfirst != -1)
-        {
-            if (Input.GetButton("P" + selectedfirst + " Cancel"))
-            {
-                selectedfirst = -1;
-                allcharsselected = false;
-                StageSelectMenu.gameObject.SetActive(false);
-                Players[0].resetFrame();
-                Players[1].resetFrame();
-            }
+        //we can simply borrow the menuhorizontal value of the selectedfirst player
+        if ((selectedfirst == 0 || selectedfirst == 1) && allcharsselected)
+            hor = Players[selectedfirst].MenuHorizontal;
 
-            else if (Input.GetButton("P" + selectedfirst + " Submit") && allcharsselected)
-            {
-                MultiPlayerTransition();
-            }
 
-        }
+        //also it's probably best to ggive the CharMenuManager the actual PlayerInput component
+        //the way it looks now, it seems that all three have some clone of the component in one way or another
+
         //if one player HAS chosen (!= -1) and the other player HASN'T (== -1) 
-        if (Players[0].CharSelected != -1 && Players[1].CharSelected == -1)
-            selectedfirst = 1;
+        if (Players[0].FullSelected && !Players[1].FullSelected) selectedfirst = 0;
 
-        if (Players[1].CharSelected != -1 && Players[0].CharSelected == -1)
-            selectedfirst = 2;
-
-
-
-        if (Players[0].FullSelected && Players[1].FullSelected)        
-            allcharsselected = true;
+        else if (Players[1].FullSelected && !Players[0].FullSelected) selectedfirst = 1;
         
+        else if (Players[0].FullSelected && Players[1].FullSelected) allcharsselected = true;
+
+        else selectedfirst = -1;
+
 
         if (allcharsselected)
         {
             //if(StageSelectMenu != null)
             StageSelectMenu.gameObject.SetActive(true);
+            Players[selectedfirst].MoveFlag(true);
+            Players[selectedfirst].choosingStage = true;
         }
 
         if (allcharsselected)
@@ -101,7 +97,7 @@ public class CharMenuManager : MonoBehaviour
 
     public void StageMovement()
     {
-        if(hor != 0 && !inputcheck)
+        if (hor != 0 && !inputcheck)
         {
             if (hor == -1)
             {
@@ -132,6 +128,11 @@ public class CharMenuManager : MonoBehaviour
         }
 
         if ((hor != -1 && hor != 1)) inputcheck = false;
+
+        if (StageSelectFlag >= 0)
+            StageSelectFlag = StageSelectFlag - 0.05f; 
+        //a buffer for the stage select to show up without accidentally going into a stage
+        //the countdown only occurs when StageMovement happens, which only happens when allcharsselected, as shown in Update()
     }
 
     public void UpdateStage(int i)
@@ -151,8 +152,6 @@ public class CharMenuManager : MonoBehaviour
         return AnimationDictionary.AD.SpriteRetrieval(CC);
     }
 
-
-
     public void MultiPlayerTransition()
     {
         //set the Character codes to the TransitionManager
@@ -168,4 +167,96 @@ public class CharMenuManager : MonoBehaviour
     }
 
 
+    private void OnEnable()
+    {
+        playerControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerControls.Disable();
+    }
+
+    public void OnSubmit(InputAction.CallbackContext context)
+    {
+        if (allcharsselected && StageSelectFlag <= 0)
+            {
+                MultiPlayerTransition();
+            }
+
+    }//press enter on a stage to choose the stage and go to it
+
+    public void OnCancel(InputAction.CallbackContext context)
+    {
+        if (allcharsselected)
+        {
+                selectedfirst = -1;
+                allcharsselected = false;
+                StageSelectMenu.gameObject.SetActive(false);
+                Players[0].resetFrame();
+                Players[1].resetFrame();
+
+                StageSelectFlag = 1f;
+        }//press b to revert back to char select when stage menu is up
+
+
+
+    }
+
+
+
+    public void OnSubmit1(InputAction.CallbackContext context)
+    {
+        if(selectedfirst == 0)
+        if (allcharsselected && StageSelectFlag <= 0 && context.started)
+        {
+            MultiPlayerTransition();
+        }
+
+    }//press enter on a stage to choose the stage and go to it
+
+    public void OnCancel1(InputAction.CallbackContext context)
+    {
+        if (allcharsselected)
+        {
+            selectedfirst = -1;
+            allcharsselected = false;
+            StageSelectMenu.gameObject.SetActive(false);
+            Players[0].resetFrame();
+            Players[1].resetFrame();
+
+            StageSelectFlag = 1f;
+        }//press b to revert back to char select when stage menu is up
+
+
+
+    }
+
+    public void OnSubmit2(InputAction.CallbackContext context)
+    { 
+        if(selectedfirst == 1)
+        if (allcharsselected && StageSelectFlag <= 0 && context.started)
+        {
+            MultiPlayerTransition();
+        }
+
+    }//press enter on a stage to choose the stage and go to it
+
+    public void OnCancel2(InputAction.CallbackContext context)
+    {
+        
+        if (allcharsselected)
+        {
+            selectedfirst = -1;
+            allcharsselected = false;
+            StageSelectMenu.gameObject.SetActive(false);
+            Players[0].resetFrame();
+            Players[1].resetFrame();
+
+            StageSelectFlag = 1f;
+        }//press b to revert back to char select when stage menu is up
+
+
+
+    }
 }

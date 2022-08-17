@@ -290,8 +290,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 1891923847}
-  - {fileID: 1840930074}
+  - {fileID: 1100946385}
   - {fileID: 770539197}
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -998,13 +997,14 @@ GameObject:
   - component: {fileID: 770539197}
   - component: {fileID: 770539200}
   - component: {fileID: 770539199}
+  - component: {fileID: 770539198}
   m_Layer: 5
   m_Name: Stage Select Menu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &770539197
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1019,13 +1019,24 @@ RectTransform:
   - {fileID: 2134064988}
   - {fileID: 1976416905}
   m_Father: {fileID: 55929961}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.25, y: 1.495}
-  m_SizeDelta: {x: 731.5, y: 408.97388}
+  m_AnchoredPosition: {x: 0, y: 0.0000019073}
+  m_SizeDelta: {x: 884, y: 496.99994}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!210 &770539198
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 770539196}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
 --- !u!114 &770539199
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1091,16 +1102,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 801188043}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4f231c4fb786f3946a6b90b886c48677, type: 3}
+  m_Script: {fileID: 11500000, guid: 01614664b831546d2ae94a42149d80ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_HorizontalAxis: Horizontal
-  m_VerticalAxis: Vertical
-  m_SubmitButton: Submit
-  m_CancelButton: Cancel
-  m_InputActionsPerSecond: 10
-  m_RepeatDelay: 0.5
-  m_ForceModuleActive: 0
+  m_MoveRepeatDelay: 0.5
+  m_MoveRepeatRate: 0.1
+  m_ActionsAsset: {fileID: -944628639613478452, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_PointAction: {fileID: 1054132383583890850, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MoveAction: {fileID: 3710738434707379630, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_SubmitAction: {fileID: 2064916234097673511, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_CancelAction: {fileID: -1967631576421560919, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_LeftClickAction: {fileID: 8056856818456041789, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_MiddleClickAction: {fileID: 3279352641294131588, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_RightClickAction: {fileID: 3837173908680883260, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_ScrollWheelAction: {fileID: 4502412055082496612, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDevicePositionAction: {fileID: 4754684134866288074, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_TrackedDeviceOrientationAction: {fileID: 1025543830046995696, guid: ca9f5fa95ffab41fb9a615ab714db018, type: 3}
+  m_DeselectOnBackgroundClick: 1
+  m_PointerBehavior: 0
 --- !u!114 &801188045
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1211,6 +1230,402 @@ RectTransform:
   m_AnchoredPosition: {x: -0.0000121593475, y: 0}
   m_SizeDelta: {x: 610.6074, y: 85.184875}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &1100946384
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1100946385}
+  - component: {fileID: 1100946386}
+  - component: {fileID: 1100946387}
+  m_Layer: 5
+  m_Name: Frame Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1100946385
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100946384}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1891923847}
+  - {fileID: 1840930074}
+  m_Father: {fileID: 55929961}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1100946386
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100946384}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 9a2130aa7f5236a4992c04285d768cff, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0f11a8d2-07fc-4c06-9b86-6d633ff2e385
+    m_ActionName: PlayerOne-Game/A[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b473a5c7-3014-4f1e-9743-e6b440a05770
+    m_ActionName: PlayerOne-Game/B[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 33f6bf87-fd8b-446a-b1bc-4be68568f626
+    m_ActionName: PlayerOne-Game/X[/XInputControllerWindows/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ed6b9773-9c0e-47bd-af68-ab58c2792a38
+    m_ActionName: PlayerOne-Game/Y[/XInputControllerWindows/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ea16c06a-5332-4e45-afa6-7406260b6c07
+    m_ActionName: PlayerOne-Game/L[/XInputControllerWindows/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2175ce0e-8bab-4ebb-a08a-4b51bac133af
+    m_ActionName: PlayerOne-Game/R[/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0d034a48-ebfc-4ec4-b070-86b23cf2c8aa
+    m_ActionName: PlayerOne-Game/Direction[/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 26b9d8f8-bb03-429b-a53b-70e2f1cb8223
+    m_ActionName: PlayerOne-Game/Pause[/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1891923850}
+        m_TargetAssemblyTypeName: PlayerFrame, Assembly-CSharp
+        m_MethodName: OnSubmit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e717baeb-ba8e-4159-8a16-ec748081e30e
+    m_ActionName: PlayerOne-Game/Submit[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1891923850}
+        m_TargetAssemblyTypeName: PlayerFrame, Assembly-CSharp
+        m_MethodName: OnCancel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: bebf7585-b5c2-4564-be17-fce4d774aade
+    m_ActionName: PlayerOne-Game/Cancel[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e30d6f8b-8488-476b-80bc-83b7e1a07560
+    m_ActionName: PlayerTwo-Game/A Keyboard[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a58deaeb-3098-47a9-83ff-1a486dcb8ff2
+    m_ActionName: PlayerTwo-Game/B Keyboard[/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2051657b-7a3f-4705-9e4a-05e699bb1622
+    m_ActionName: PlayerTwo-Game/X Keyboard[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 95ef48ce-8418-4501-9afb-5b4c1b00290a
+    m_ActionName: PlayerTwo-Game/Y Keyboard[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 157eb431-2fa3-4a5c-b229-f7cabce16373
+    m_ActionName: PlayerTwo-Game/L Keyboard[/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7f4638d1-2ebf-40c0-8dd1-c7b76ed75192
+    m_ActionName: PlayerTwo-Game/R Keyboard[/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 38388d2e-9a27-46c7-ab19-47421764cea6
+    m_ActionName: PlayerTwo-Game/Direction
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 18e0d433-49cf-4445-8455-d36c23637b8e
+    m_ActionName: PlayerTwo-Game/Pause[/Keyboard/backquote]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1840930075}
+        m_TargetAssemblyTypeName: PlayerFrame, Assembly-CSharp
+        m_MethodName: OnSubmit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3d855e93-d44a-4893-967d-80891e1b8cbd
+    m_ActionName: PlayerTwo-Game/Submit Keyboard[/Keyboard/enter,/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1840930075}
+        m_TargetAssemblyTypeName: PlayerFrame, Assembly-CSharp
+        m_MethodName: OnCancel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f0c3db04-0b23-41e7-8117-6f87f81cf6a3
+    m_ActionName: PlayerTwo-Game/Cancel Keyboard[/Keyboard/backspace]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 933c75e8-9c57-4273-aa2a-279a36d44389
+    m_ActionName: PlayerTwo-Game/A[/Keyboard/t]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8e613c6b-ae8f-4219-b227-2a8e613aa06a
+    m_ActionName: PlayerTwo-Game/B[/Keyboard/y]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 48f270ec-1612-49e6-b425-da86f8ce496b
+    m_ActionName: PlayerTwo-Game/X[/Keyboard/u]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8e633dab-9764-4bb6-9fce-c00189cc622e
+    m_ActionName: PlayerTwo-Game/Y[/Keyboard/i]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 199bbe9f-ba48-4756-bb77-76046090f745
+    m_ActionName: PlayerTwo-Game/L[/Keyboard/h]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dfd4f126-8b17-4ba9-af3e-5b1a1a773266
+    m_ActionName: PlayerTwo-Game/R[/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 26f0e896-04ca-4cdb-95d7-8395618c71f8
+    m_ActionName: Game/A1[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2c4dbb77-2dc9-4d95-b712-fe0ff306a1db
+    m_ActionName: Game/B1[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0eb1bec7-08ff-412f-9215-77273957915b
+    m_ActionName: Game/X1[/XInputControllerWindows/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 216bdfac-0eac-4a1f-97af-707af5a89e93
+    m_ActionName: Game/Y1[/XInputControllerWindows/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ca85f81d-56ca-4167-b847-078bc93c60b1
+    m_ActionName: Game/L1[/XInputControllerWindows/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 949ba44b-3e02-495c-b2cf-8bb9e6abec01
+    m_ActionName: Game/R1[/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 023d9394-a256-4e1f-8191-cbc521713a3e
+    m_ActionName: Game/A2[/Keyboard/t]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ef795796-9e40-4a98-98e6-5a83eb3f28f8
+    m_ActionName: Game/B2[/Keyboard/y]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b2895ed0-06a0-40ce-b2bc-7c5a3afdbf4c
+    m_ActionName: Game/X2[/Keyboard/u]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: eed2fe68-7ed7-4647-bfac-719d1ab63ebe
+    m_ActionName: Game/Y2[/Keyboard/i]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 70b8ad7e-85af-4b24-ac75-b6f96a50ab77
+    m_ActionName: Game/L2[/Keyboard/h]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: acbbd988-043d-428f-bd2a-7775194693d0
+    m_ActionName: Game/R2[/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cde07a93-b6e5-4774-b7da-4d8283a8a6b6
+    m_ActionName: Game/Direction[/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8784ce09-8678-4d87-8ffe-4ded4ec874d3
+    m_ActionName: Game/Pause1[/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b99757e0-34cc-4b00-905e-69f28a506dd1
+    m_ActionName: Game/Submit1[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 79c6a67f-5c97-4528-bdba-f684e39a9e4c
+    m_ActionName: Game/Cancel1[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a2a534ce-de59-4649-9359-1b87a6a1812b
+    m_ActionName: Game/Direction2[/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a891b449-ba8a-4afc-b70e-e0e4a85f27dc
+    m_ActionName: Game/Cancel2[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c531a448-64e1-4f69-ba98-8b5de6976e3d
+    m_ActionName: Game/Submit2[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 33af467b-10f5-40d8-8c29-ffcd4aea8f55
+    m_ActionName: Game/Pause2[/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2cc4f9ed-c17c-4f37-bf86-278540e04c07
+    m_ActionName: Game/Pause[/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 905c3bf7-3a2e-44db-ac73-623d361a4886
+    m_ActionName: UI/A1[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b657895f-3864-494a-b647-9e3f3a66d716
+    m_ActionName: UI/B1[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 48eb7d16-a643-493a-bc37-474c6e477119
+    m_ActionName: UI/X1[/XInputControllerWindows/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9f2615ce-6622-42c5-bdfd-d47d9767e110
+    m_ActionName: UI/Y1[/XInputControllerWindows/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cb64f6ed-c5f6-4611-8b7a-4848e9ca51d8
+    m_ActionName: UI/L1[/XInputControllerWindows/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 01902937-5648-468d-99bd-5ac2103d8277
+    m_ActionName: UI/R1[/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 67e40231-2f34-4a30-a57d-0bcd5bb3482f
+    m_ActionName: UI/A2[/Keyboard/t]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8c71576d-b201-4f6c-8f1f-5eddd3fea4c0
+    m_ActionName: UI/B2[/Keyboard/y]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 761886ab-a911-474e-896b-dc6c3af1e69e
+    m_ActionName: UI/X2[/Keyboard/u]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 88242d1b-b6df-4d8c-a21e-dfefa263d2ca
+    m_ActionName: UI/Y2[/Keyboard/i]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4d9421b9-4d2c-4abc-9da3-2f92b89459f3
+    m_ActionName: UI/L2[/Keyboard/h]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f13cda13-6329-4c22-91f1-a47ff631ac8a
+    m_ActionName: UI/R2[/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 502fe318-bac1-41a2-ada9-34194b265c02
+    m_ActionName: UI/Pause2[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 722db351-9437-4542-af77-9f6d51c15394
+    m_ActionName: UI/Cancel2[/Keyboard/backspace]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fbbcc1ae-cd04-4496-8735-d8ddd10f6dcc
+    m_ActionName: UI/Submit2[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 64986fc0-cea5-45d8-a9cc-93832bd95eae
+    m_ActionName: UI/Direction2[/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4455d327-6f36-4378-8e3b-2e745a9bbd42
+    m_ActionName: UI/Cancel1[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e20afdc2-462e-4257-93c0-4b28f9663711
+    m_ActionName: UI/Submit1[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5c6ac5ef-200e-44c9-8dff-d465bf53fff5
+    m_ActionName: UI/Pause1[/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e98fc386-99db-402b-bb0d-cf8c9e9c21b1
+    m_ActionName: UI/Direction[/XInputControllerWindows/leftStick]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: PlayerOne-Game
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!210 &1100946387
+SortingGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100946384}
+  m_Enabled: 1
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
 --- !u!1 &1134035255
 GameObject:
   m_ObjectHideFlags: 0
@@ -1335,7 +1750,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -2.969986}
+  m_AnchoredPosition: {x: 0, y: -2.9699707}
   m_SizeDelta: {x: 0, y: -5.94516}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1252452675
@@ -1645,6 +2060,497 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1376809184}
   m_CullTransparentMesh: 0
+--- !u!1 &1497412922 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3567689191615647316, guid: 4034ebaed9ff7d047b46c3214df9e47b, type: 3}
+  m_PrefabInstance: {fileID: 3567689191326855224}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1497412924
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1497412922}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 9a2130aa7f5236a4992c04285d768cff, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0f11a8d2-07fc-4c06-9b86-6d633ff2e385
+    m_ActionName: PlayerOne-Game/A[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b473a5c7-3014-4f1e-9743-e6b440a05770
+    m_ActionName: PlayerOne-Game/B[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 33f6bf87-fd8b-446a-b1bc-4be68568f626
+    m_ActionName: PlayerOne-Game/X[/XInputControllerWindows/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ed6b9773-9c0e-47bd-af68-ab58c2792a38
+    m_ActionName: PlayerOne-Game/Y[/XInputControllerWindows/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ea16c06a-5332-4e45-afa6-7406260b6c07
+    m_ActionName: PlayerOne-Game/L[/XInputControllerWindows/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2175ce0e-8bab-4ebb-a08a-4b51bac133af
+    m_ActionName: PlayerOne-Game/R[/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 26b9d8f8-bb03-429b-a53b-70e2f1cb8223
+    m_ActionName: PlayerOne-Game/Pause[/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2134305343}
+        m_TargetAssemblyTypeName: CharMenuManager, Assembly-CSharp
+        m_MethodName: OnSubmit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1891923850}
+        m_TargetAssemblyTypeName: PlayerFrame, Assembly-CSharp
+        m_MethodName: OnSubmit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e717baeb-ba8e-4159-8a16-ec748081e30e
+    m_ActionName: PlayerOne-Game/Submit[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2134305343}
+        m_TargetAssemblyTypeName: CharMenuManager, Assembly-CSharp
+        m_MethodName: OnCancel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1891923850}
+        m_TargetAssemblyTypeName: PlayerFrame, Assembly-CSharp
+        m_MethodName: OnCancel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: bebf7585-b5c2-4564-be17-fce4d774aade
+    m_ActionName: PlayerOne-Game/Cancel[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0d034a48-ebfc-4ec4-b070-86b23cf2c8aa
+    m_ActionName: PlayerOne-Game/Direction[/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e30d6f8b-8488-476b-80bc-83b7e1a07560
+    m_ActionName: PlayerTwo-Game/A Keyboard[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a58deaeb-3098-47a9-83ff-1a486dcb8ff2
+    m_ActionName: PlayerTwo-Game/B Keyboard[/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2051657b-7a3f-4705-9e4a-05e699bb1622
+    m_ActionName: PlayerTwo-Game/X Keyboard[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 95ef48ce-8418-4501-9afb-5b4c1b00290a
+    m_ActionName: PlayerTwo-Game/Y Keyboard[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 157eb431-2fa3-4a5c-b229-f7cabce16373
+    m_ActionName: PlayerTwo-Game/L Keyboard[/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7f4638d1-2ebf-40c0-8dd1-c7b76ed75192
+    m_ActionName: PlayerTwo-Game/R Keyboard[/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 18e0d433-49cf-4445-8455-d36c23637b8e
+    m_ActionName: PlayerTwo-Game/Pause[/Keyboard/backquote]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2134305343}
+        m_TargetAssemblyTypeName: CharMenuManager, Assembly-CSharp
+        m_MethodName: OnSubmit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1840930075}
+        m_TargetAssemblyTypeName: PlayerFrame, Assembly-CSharp
+        m_MethodName: OnSubmit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3d855e93-d44a-4893-967d-80891e1b8cbd
+    m_ActionName: PlayerTwo-Game/Submit Keyboard[/Keyboard/enter,/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2134305343}
+        m_TargetAssemblyTypeName: CharMenuManager, Assembly-CSharp
+        m_MethodName: OnCancel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1840930075}
+        m_TargetAssemblyTypeName: PlayerFrame, Assembly-CSharp
+        m_MethodName: OnCancel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f0c3db04-0b23-41e7-8117-6f87f81cf6a3
+    m_ActionName: PlayerTwo-Game/Cancel Keyboard[/Keyboard/backspace]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 38388d2e-9a27-46c7-ab19-47421764cea6
+    m_ActionName: PlayerTwo-Game/Direction Keyboard[/Keyboard/anyKey]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 933c75e8-9c57-4273-aa2a-279a36d44389
+    m_ActionName: PlayerTwo-Game/A[/Keyboard/t]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8e613c6b-ae8f-4219-b227-2a8e613aa06a
+    m_ActionName: PlayerTwo-Game/B[/Keyboard/y]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 48f270ec-1612-49e6-b425-da86f8ce496b
+    m_ActionName: PlayerTwo-Game/X[/Keyboard/u]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8e633dab-9764-4bb6-9fce-c00189cc622e
+    m_ActionName: PlayerTwo-Game/Y[/Keyboard/i]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 199bbe9f-ba48-4756-bb77-76046090f745
+    m_ActionName: PlayerTwo-Game/L[/Keyboard/h]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dfd4f126-8b17-4ba9-af3e-5b1a1a773266
+    m_ActionName: PlayerTwo-Game/R[/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 26f0e896-04ca-4cdb-95d7-8395618c71f8
+    m_ActionName: Game/A1
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2c4dbb77-2dc9-4d95-b712-fe0ff306a1db
+    m_ActionName: Game/B1[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0eb1bec7-08ff-412f-9215-77273957915b
+    m_ActionName: Game/X1[/XInputControllerWindows/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 216bdfac-0eac-4a1f-97af-707af5a89e93
+    m_ActionName: Game/Y1[/XInputControllerWindows/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ca85f81d-56ca-4167-b847-078bc93c60b1
+    m_ActionName: Game/L1[/XInputControllerWindows/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 949ba44b-3e02-495c-b2cf-8bb9e6abec01
+    m_ActionName: Game/R1[/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 023d9394-a256-4e1f-8191-cbc521713a3e
+    m_ActionName: Game/A2[/Keyboard/t]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ef795796-9e40-4a98-98e6-5a83eb3f28f8
+    m_ActionName: Game/B2[/Keyboard/y]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b2895ed0-06a0-40ce-b2bc-7c5a3afdbf4c
+    m_ActionName: Game/X2[/Keyboard/u]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: eed2fe68-7ed7-4647-bfac-719d1ab63ebe
+    m_ActionName: Game/Y2[/Keyboard/i]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 70b8ad7e-85af-4b24-ac75-b6f96a50ab77
+    m_ActionName: Game/L2[/Keyboard/h]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: acbbd988-043d-428f-bd2a-7775194693d0
+    m_ActionName: Game/R2[/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cde07a93-b6e5-4774-b7da-4d8283a8a6b6
+    m_ActionName: Game/Direction[/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8784ce09-8678-4d87-8ffe-4ded4ec874d3
+    m_ActionName: Game/Pause1[/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2134305343}
+        m_TargetAssemblyTypeName: CharMenuManager, Assembly-CSharp
+        m_MethodName: OnSubmit1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b99757e0-34cc-4b00-905e-69f28a506dd1
+    m_ActionName: Game/Submit1[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2134305343}
+        m_TargetAssemblyTypeName: CharMenuManager, Assembly-CSharp
+        m_MethodName: OnCancel1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 79c6a67f-5c97-4528-bdba-f684e39a9e4c
+    m_ActionName: Game/Cancel1[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a2a534ce-de59-4649-9359-1b87a6a1812b
+    m_ActionName: Game/Direction2[/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2134305343}
+        m_TargetAssemblyTypeName: CharMenuManager, Assembly-CSharp
+        m_MethodName: OnCancel2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a891b449-ba8a-4afc-b70e-e0e4a85f27dc
+    m_ActionName: Game/Cancel2[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2134305343}
+        m_TargetAssemblyTypeName: CharMenuManager, Assembly-CSharp
+        m_MethodName: OnSubmit2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c531a448-64e1-4f69-ba98-8b5de6976e3d
+    m_ActionName: Game/Submit2[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 33af467b-10f5-40d8-8c29-ffcd4aea8f55
+    m_ActionName: Game/Pause2[/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 905c3bf7-3a2e-44db-ac73-623d361a4886
+    m_ActionName: UI/A1[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b657895f-3864-494a-b647-9e3f3a66d716
+    m_ActionName: UI/B1[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 48eb7d16-a643-493a-bc37-474c6e477119
+    m_ActionName: UI/X1[/XInputControllerWindows/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9f2615ce-6622-42c5-bdfd-d47d9767e110
+    m_ActionName: UI/Y1[/XInputControllerWindows/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cb64f6ed-c5f6-4611-8b7a-4848e9ca51d8
+    m_ActionName: UI/L1[/XInputControllerWindows/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 01902937-5648-468d-99bd-5ac2103d8277
+    m_ActionName: UI/R1[/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 67e40231-2f34-4a30-a57d-0bcd5bb3482f
+    m_ActionName: UI/A2[/Keyboard/t]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8c71576d-b201-4f6c-8f1f-5eddd3fea4c0
+    m_ActionName: UI/B2[/Keyboard/y]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 761886ab-a911-474e-896b-dc6c3af1e69e
+    m_ActionName: UI/X2[/Keyboard/u]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 88242d1b-b6df-4d8c-a21e-dfefa263d2ca
+    m_ActionName: UI/Y2[/Keyboard/i]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4d9421b9-4d2c-4abc-9da3-2f92b89459f3
+    m_ActionName: UI/L2[/Keyboard/h]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f13cda13-6329-4c22-91f1-a47ff631ac8a
+    m_ActionName: UI/R2[/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 502fe318-bac1-41a2-ada9-34194b265c02
+    m_ActionName: UI/Pause2[/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2134305343}
+        m_TargetAssemblyTypeName: CharMenuManager, Assembly-CSharp
+        m_MethodName: OnCancel2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 722db351-9437-4542-af77-9f6d51c15394
+    m_ActionName: UI/Cancel2[/Keyboard/backspace]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2134305343}
+        m_TargetAssemblyTypeName: CharMenuManager, Assembly-CSharp
+        m_MethodName: OnSubmit2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: fbbcc1ae-cd04-4496-8735-d8ddd10f6dcc
+    m_ActionName: UI/Submit2[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 64986fc0-cea5-45d8-a9cc-93832bd95eae
+    m_ActionName: UI/Direction2[/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2134305343}
+        m_TargetAssemblyTypeName: CharMenuManager, Assembly-CSharp
+        m_MethodName: OnCancel1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 4455d327-6f36-4378-8e3b-2e745a9bbd42
+    m_ActionName: UI/Cancel1[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2134305343}
+        m_TargetAssemblyTypeName: CharMenuManager, Assembly-CSharp
+        m_MethodName: OnSubmit1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e20afdc2-462e-4257-93c0-4b28f9663711
+    m_ActionName: UI/Submit1[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5c6ac5ef-200e-44c9-8dff-d465bf53fff5
+    m_ActionName: UI/Pause1[/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e98fc386-99db-402b-bb0d-cf8c9e9c21b1
+    m_ActionName: UI/Direction[/XInputControllerWindows/leftStick]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: UI
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1746788915
 GameObject:
   m_ObjectHideFlags: 0
@@ -1739,6 +2645,7 @@ GameObject:
   - component: {fileID: 1840930077}
   - component: {fileID: 1840930075}
   - component: {fileID: 1840930076}
+  - component: {fileID: 1840930078}
   m_Layer: 5
   m_Name: Player Frame 2
   m_TagString: Untagged
@@ -1753,19 +2660,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1840930073}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1134035256}
   - {fileID: 1957405059}
-  m_Father: {fileID: 55929961}
+  m_Father: {fileID: 1100946385}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 0.5}
-  m_AnchoredPosition: {x: 0.5, y: 0.0040283203}
-  m_SizeDelta: {x: 1, y: -0.008056641}
+  m_AnchoredPosition: {x: -1.7001, y: -115}
+  m_SizeDelta: {x: 931.86365, y: 253.70947}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1840930075
 MonoBehaviour:
@@ -1788,6 +2695,9 @@ MonoBehaviour:
   PlayerNumber: 2
   currIcon: 0
   MenuHorizontal: 0
+  MenuVertical: 0
+  KeyboardMenuVal: 0
+  DirNavValue: {x: 0, y: 0}
   inputcheck: 0
   buttoncheck: 0
   IconSample: {fileID: 1367483565}
@@ -1795,6 +2705,56 @@ MonoBehaviour:
   CharSelected: -1
   ColorSelected: 
   FullSelected: 0
+  playerControls:
+    m_Name: Player Controls
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 0efd71b9-8abb-4a22-ac89-764d085668c0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 2D Vector
+      m_Id: 30a92bdc-9f0b-4a35-b596-cbeed024f038
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 4
+    - m_Name: up
+      m_Id: ac7441c7-d99c-44e3-ae13-e637529df01c
+      m_Path: <Keyboard>/w
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 8
+    - m_Name: down
+      m_Id: b58a8734-4413-4bbb-a125-2a883682407d
+      m_Path: <Keyboard>/s
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 8
+    - m_Name: left
+      m_Id: a00d5072-fc35-4be0-a5d0-f79e33bc25ea
+      m_Path: <Keyboard>/a
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 8
+    - m_Name: right
+      m_Id: f70b7f97-5f47-45da-baf1-2cec223e649e
+      m_Path: <Keyboard>/d
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 8
+  canMove: 0
+  choosingStage: 0
 --- !u!210 &1840930076
 SortingGroup:
   m_ObjectHideFlags: 0
@@ -1814,6 +2774,376 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1840930073}
   m_CullTransparentMesh: 0
+--- !u!114 &1840930078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1840930073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 9a2130aa7f5236a4992c04285d768cff, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0f11a8d2-07fc-4c06-9b86-6d633ff2e385
+    m_ActionName: PlayerOne-Game/A[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b473a5c7-3014-4f1e-9743-e6b440a05770
+    m_ActionName: PlayerOne-Game/B[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 33f6bf87-fd8b-446a-b1bc-4be68568f626
+    m_ActionName: PlayerOne-Game/X[/XInputControllerWindows/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ed6b9773-9c0e-47bd-af68-ab58c2792a38
+    m_ActionName: PlayerOne-Game/Y[/XInputControllerWindows/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ea16c06a-5332-4e45-afa6-7406260b6c07
+    m_ActionName: PlayerOne-Game/L[/XInputControllerWindows/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2175ce0e-8bab-4ebb-a08a-4b51bac133af
+    m_ActionName: PlayerOne-Game/R[/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 26b9d8f8-bb03-429b-a53b-70e2f1cb8223
+    m_ActionName: PlayerOne-Game/Pause[/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e717baeb-ba8e-4159-8a16-ec748081e30e
+    m_ActionName: PlayerOne-Game/Submit[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: bebf7585-b5c2-4564-be17-fce4d774aade
+    m_ActionName: PlayerOne-Game/Cancel[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0d034a48-ebfc-4ec4-b070-86b23cf2c8aa
+    m_ActionName: PlayerOne-Game/Direction[/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e30d6f8b-8488-476b-80bc-83b7e1a07560
+    m_ActionName: PlayerTwo-Game/A Keyboard[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a58deaeb-3098-47a9-83ff-1a486dcb8ff2
+    m_ActionName: PlayerTwo-Game/B Keyboard[/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2051657b-7a3f-4705-9e4a-05e699bb1622
+    m_ActionName: PlayerTwo-Game/X Keyboard[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 95ef48ce-8418-4501-9afb-5b4c1b00290a
+    m_ActionName: PlayerTwo-Game/Y Keyboard[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 157eb431-2fa3-4a5c-b229-f7cabce16373
+    m_ActionName: PlayerTwo-Game/L Keyboard[/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7f4638d1-2ebf-40c0-8dd1-c7b76ed75192
+    m_ActionName: PlayerTwo-Game/R Keyboard[/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 18e0d433-49cf-4445-8455-d36c23637b8e
+    m_ActionName: PlayerTwo-Game/Pause[/Keyboard/backquote]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1840930075}
+        m_TargetAssemblyTypeName: PlayerFrame, Assembly-CSharp
+        m_MethodName: OnSubmit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2134305343}
+        m_TargetAssemblyTypeName: CharMenuManager, Assembly-CSharp
+        m_MethodName: OnSubmit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 3d855e93-d44a-4893-967d-80891e1b8cbd
+    m_ActionName: PlayerTwo-Game/Submit[/Keyboard/enter,/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1840930075}
+        m_TargetAssemblyTypeName: PlayerFrame, Assembly-CSharp
+        m_MethodName: OnCancel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2134305343}
+        m_TargetAssemblyTypeName: CharMenuManager, Assembly-CSharp
+        m_MethodName: OnCancel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: f0c3db04-0b23-41e7-8117-6f87f81cf6a3
+    m_ActionName: PlayerTwo-Game/Cancel[/Keyboard/backspace]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 38388d2e-9a27-46c7-ab19-47421764cea6
+    m_ActionName: PlayerTwo-Game/Direction Keyboard[/Keyboard/anyKey]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 933c75e8-9c57-4273-aa2a-279a36d44389
+    m_ActionName: PlayerTwo-Game/A[/Keyboard/t]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8e613c6b-ae8f-4219-b227-2a8e613aa06a
+    m_ActionName: PlayerTwo-Game/B[/Keyboard/y]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 48f270ec-1612-49e6-b425-da86f8ce496b
+    m_ActionName: PlayerTwo-Game/X[/Keyboard/u]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8e633dab-9764-4bb6-9fce-c00189cc622e
+    m_ActionName: PlayerTwo-Game/Y[/Keyboard/i]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 199bbe9f-ba48-4756-bb77-76046090f745
+    m_ActionName: PlayerTwo-Game/L[/Keyboard/h]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dfd4f126-8b17-4ba9-af3e-5b1a1a773266
+    m_ActionName: PlayerTwo-Game/R[/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 26f0e896-04ca-4cdb-95d7-8395618c71f8
+    m_ActionName: Game/A1[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2c4dbb77-2dc9-4d95-b712-fe0ff306a1db
+    m_ActionName: Game/B1[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0eb1bec7-08ff-412f-9215-77273957915b
+    m_ActionName: Game/X1[/XInputControllerWindows/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 216bdfac-0eac-4a1f-97af-707af5a89e93
+    m_ActionName: Game/Y1[/XInputControllerWindows/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ca85f81d-56ca-4167-b847-078bc93c60b1
+    m_ActionName: Game/L1[/XInputControllerWindows/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 949ba44b-3e02-495c-b2cf-8bb9e6abec01
+    m_ActionName: Game/R1[/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 023d9394-a256-4e1f-8191-cbc521713a3e
+    m_ActionName: Game/A2[/Keyboard/t]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ef795796-9e40-4a98-98e6-5a83eb3f28f8
+    m_ActionName: Game/B2[/Keyboard/y]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b2895ed0-06a0-40ce-b2bc-7c5a3afdbf4c
+    m_ActionName: Game/X2[/Keyboard/u]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: eed2fe68-7ed7-4647-bfac-719d1ab63ebe
+    m_ActionName: Game/Y2[/Keyboard/i]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 70b8ad7e-85af-4b24-ac75-b6f96a50ab77
+    m_ActionName: Game/L2[/Keyboard/h]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: acbbd988-043d-428f-bd2a-7775194693d0
+    m_ActionName: Game/R2[/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cde07a93-b6e5-4774-b7da-4d8283a8a6b6
+    m_ActionName: Game/Direction[/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8784ce09-8678-4d87-8ffe-4ded4ec874d3
+    m_ActionName: Game/Pause1[/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b99757e0-34cc-4b00-905e-69f28a506dd1
+    m_ActionName: Game/Submit1[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 79c6a67f-5c97-4528-bdba-f684e39a9e4c
+    m_ActionName: Game/Cancel1[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a2a534ce-de59-4649-9359-1b87a6a1812b
+    m_ActionName: Game/Direction2[/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1840930075}
+        m_TargetAssemblyTypeName: PlayerFrame, Assembly-CSharp
+        m_MethodName: OnCancel2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: a891b449-ba8a-4afc-b70e-e0e4a85f27dc
+    m_ActionName: Game/Cancel2[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1840930075}
+        m_TargetAssemblyTypeName: PlayerFrame, Assembly-CSharp
+        m_MethodName: OnSubmit2
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: c531a448-64e1-4f69-ba98-8b5de6976e3d
+    m_ActionName: Game/Submit2[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 33af467b-10f5-40d8-8c29-ffcd4aea8f55
+    m_ActionName: Game/Pause2[/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2cc4f9ed-c17c-4f37-bf86-278540e04c07
+    m_ActionName: Game/Pause[/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 905c3bf7-3a2e-44db-ac73-623d361a4886
+    m_ActionName: UI/A1[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b657895f-3864-494a-b647-9e3f3a66d716
+    m_ActionName: UI/B1[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 48eb7d16-a643-493a-bc37-474c6e477119
+    m_ActionName: UI/X1[/XInputControllerWindows/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9f2615ce-6622-42c5-bdfd-d47d9767e110
+    m_ActionName: UI/Y1[/XInputControllerWindows/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cb64f6ed-c5f6-4611-8b7a-4848e9ca51d8
+    m_ActionName: UI/L1[/XInputControllerWindows/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 01902937-5648-468d-99bd-5ac2103d8277
+    m_ActionName: UI/R1[/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 67e40231-2f34-4a30-a57d-0bcd5bb3482f
+    m_ActionName: UI/A2[/Keyboard/t]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8c71576d-b201-4f6c-8f1f-5eddd3fea4c0
+    m_ActionName: UI/B2[/Keyboard/y]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 761886ab-a911-474e-896b-dc6c3af1e69e
+    m_ActionName: UI/X2[/Keyboard/u]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 88242d1b-b6df-4d8c-a21e-dfefa263d2ca
+    m_ActionName: UI/Y2[/Keyboard/i]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4d9421b9-4d2c-4abc-9da3-2f92b89459f3
+    m_ActionName: UI/L2[/Keyboard/h]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f13cda13-6329-4c22-91f1-a47ff631ac8a
+    m_ActionName: UI/R2[/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 502fe318-bac1-41a2-ada9-34194b265c02
+    m_ActionName: UI/Pause2[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 722db351-9437-4542-af77-9f6d51c15394
+    m_ActionName: UI/Cancel2[/Keyboard/backspace]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fbbcc1ae-cd04-4496-8735-d8ddd10f6dcc
+    m_ActionName: UI/Submit2[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 64986fc0-cea5-45d8-a9cc-93832bd95eae
+    m_ActionName: UI/Direction2[/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4455d327-6f36-4378-8e3b-2e745a9bbd42
+    m_ActionName: UI/Cancel1[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e20afdc2-462e-4257-93c0-4b28f9663711
+    m_ActionName: UI/Submit1[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5c6ac5ef-200e-44c9-8dff-d465bf53fff5
+    m_ActionName: UI/Pause1[/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e98fc386-99db-402b-bb0d-cf8c9e9c21b1
+    m_ActionName: UI/Direction[/XInputControllerWindows/leftStick]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Game
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1875174250
 GameObject:
   m_ObjectHideFlags: 0
@@ -1909,6 +3239,7 @@ GameObject:
   - component: {fileID: 1891923849}
   - component: {fileID: 1891923850}
   - component: {fileID: 1891923848}
+  - component: {fileID: 1891923851}
   m_Layer: 5
   m_Name: Player Frame 1
   m_TagString: Untagged
@@ -1923,19 +3254,19 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1891923846}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 334513350}
   - {fileID: 40038888}
-  m_Father: {fileID: 55929961}
+  m_Father: {fileID: 1100946385}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0.5040283}
-  m_SizeDelta: {x: 0, y: -1.0080566}
+  m_AnchoredPosition: {x: -1.7, y: 120.6}
+  m_SizeDelta: {x: 931.86365, y: 239.16803}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!210 &1891923848
 SortingGroup:
@@ -1977,6 +3308,9 @@ MonoBehaviour:
   PlayerNumber: 1
   currIcon: 0
   MenuHorizontal: 0
+  MenuVertical: 0
+  KeyboardMenuVal: 0
+  DirNavValue: {x: 0, y: 0}
   inputcheck: 0
   buttoncheck: 0
   IconSample: {fileID: 697204367}
@@ -1984,6 +3318,426 @@ MonoBehaviour:
   CharSelected: -1
   ColorSelected: 
   FullSelected: 0
+  playerControls:
+    m_Name: Player Controls
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 641553ef-25a0-4908-baae-2ce21712fcc0
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 2D Vector
+      m_Id: f427a96d-c5b8-4738-ae61-8a898e3df3e2
+      m_Path: 2DVector
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 4
+    - m_Name: up
+      m_Id: a6693cd5-0fa9-4b6c-a28c-d948e606ca97
+      m_Path: <Gamepad>/leftStick/up
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 8
+    - m_Name: down
+      m_Id: f5110acf-ca63-4995-ba88-fe8810ca078a
+      m_Path: <Gamepad>/leftStick/down
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 8
+    - m_Name: left
+      m_Id: 492ca116-8196-441a-ba06-121c3c5d9841
+      m_Path: <Gamepad>/leftStick/left
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 8
+    - m_Name: right
+      m_Id: dcb6099b-1b28-43e5-a154-1a363acb01d3
+      m_Path: <Gamepad>/leftStick/right
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Player Controls
+      m_Flags: 8
+  canMove: 0
+  choosingStage: 0
+--- !u!114 &1891923851
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1891923846}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: 9a2130aa7f5236a4992c04285d768cff, type: 3}
+  m_NotificationBehavior: 2
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents:
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0f11a8d2-07fc-4c06-9b86-6d633ff2e385
+    m_ActionName: PlayerOne-Game/A[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b473a5c7-3014-4f1e-9743-e6b440a05770
+    m_ActionName: PlayerOne-Game/B[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 33f6bf87-fd8b-446a-b1bc-4be68568f626
+    m_ActionName: PlayerOne-Game/X[/XInputControllerWindows/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ed6b9773-9c0e-47bd-af68-ab58c2792a38
+    m_ActionName: PlayerOne-Game/Y[/XInputControllerWindows/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ea16c06a-5332-4e45-afa6-7406260b6c07
+    m_ActionName: PlayerOne-Game/L[/XInputControllerWindows/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2175ce0e-8bab-4ebb-a08a-4b51bac133af
+    m_ActionName: PlayerOne-Game/R[/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 26b9d8f8-bb03-429b-a53b-70e2f1cb8223
+    m_ActionName: PlayerOne-Game/Pause[/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1891923850}
+        m_TargetAssemblyTypeName: PlayerFrame, Assembly-CSharp
+        m_MethodName: OnSubmit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2134305343}
+        m_TargetAssemblyTypeName: CharMenuManager, Assembly-CSharp
+        m_MethodName: OnSubmit
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: e717baeb-ba8e-4159-8a16-ec748081e30e
+    m_ActionName: PlayerOne-Game/Submit[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1891923850}
+        m_TargetAssemblyTypeName: PlayerFrame, Assembly-CSharp
+        m_MethodName: OnCancel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2134305343}
+        m_TargetAssemblyTypeName: CharMenuManager, Assembly-CSharp
+        m_MethodName: OnCancel
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: bebf7585-b5c2-4564-be17-fce4d774aade
+    m_ActionName: PlayerOne-Game/Cancel[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0d034a48-ebfc-4ec4-b070-86b23cf2c8aa
+    m_ActionName: PlayerOne-Game/Direction[/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e30d6f8b-8488-476b-80bc-83b7e1a07560
+    m_ActionName: PlayerTwo-Game/A Keyboard[/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a58deaeb-3098-47a9-83ff-1a486dcb8ff2
+    m_ActionName: PlayerTwo-Game/B Keyboard[/Keyboard/w]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2051657b-7a3f-4705-9e4a-05e699bb1622
+    m_ActionName: PlayerTwo-Game/X Keyboard[/Keyboard/e]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 95ef48ce-8418-4501-9afb-5b4c1b00290a
+    m_ActionName: PlayerTwo-Game/Y Keyboard[/Keyboard/r]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 157eb431-2fa3-4a5c-b229-f7cabce16373
+    m_ActionName: PlayerTwo-Game/L Keyboard[/Keyboard/s]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 7f4638d1-2ebf-40c0-8dd1-c7b76ed75192
+    m_ActionName: PlayerTwo-Game/R Keyboard[/Keyboard/d]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 18e0d433-49cf-4445-8455-d36c23637b8e
+    m_ActionName: PlayerTwo-Game/Pause[/Keyboard/backquote]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 3d855e93-d44a-4893-967d-80891e1b8cbd
+    m_ActionName: PlayerTwo-Game/Submit[/Keyboard/enter,/Keyboard/q]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f0c3db04-0b23-41e7-8117-6f87f81cf6a3
+    m_ActionName: PlayerTwo-Game/Cancel[/Keyboard/backspace]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 38388d2e-9a27-46c7-ab19-47421764cea6
+    m_ActionName: PlayerTwo-Game/Direction Keyboard[/Keyboard/anyKey]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 933c75e8-9c57-4273-aa2a-279a36d44389
+    m_ActionName: PlayerTwo-Game/A[/Keyboard/t]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8e613c6b-ae8f-4219-b227-2a8e613aa06a
+    m_ActionName: PlayerTwo-Game/B[/Keyboard/y]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 48f270ec-1612-49e6-b425-da86f8ce496b
+    m_ActionName: PlayerTwo-Game/X[/Keyboard/u]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8e633dab-9764-4bb6-9fce-c00189cc622e
+    m_ActionName: PlayerTwo-Game/Y[/Keyboard/i]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 199bbe9f-ba48-4756-bb77-76046090f745
+    m_ActionName: PlayerTwo-Game/L[/Keyboard/h]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: dfd4f126-8b17-4ba9-af3e-5b1a1a773266
+    m_ActionName: PlayerTwo-Game/R[/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 26f0e896-04ca-4cdb-95d7-8395618c71f8
+    m_ActionName: Game/A1[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2c4dbb77-2dc9-4d95-b712-fe0ff306a1db
+    m_ActionName: Game/B1[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 0eb1bec7-08ff-412f-9215-77273957915b
+    m_ActionName: Game/X1[/XInputControllerWindows/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 216bdfac-0eac-4a1f-97af-707af5a89e93
+    m_ActionName: Game/Y1[/XInputControllerWindows/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ca85f81d-56ca-4167-b847-078bc93c60b1
+    m_ActionName: Game/L1[/XInputControllerWindows/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 949ba44b-3e02-495c-b2cf-8bb9e6abec01
+    m_ActionName: Game/R1[/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 023d9394-a256-4e1f-8191-cbc521713a3e
+    m_ActionName: Game/A2[/Keyboard/t]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: ef795796-9e40-4a98-98e6-5a83eb3f28f8
+    m_ActionName: Game/B2[/Keyboard/y]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b2895ed0-06a0-40ce-b2bc-7c5a3afdbf4c
+    m_ActionName: Game/X2[/Keyboard/u]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: eed2fe68-7ed7-4647-bfac-719d1ab63ebe
+    m_ActionName: Game/Y2[/Keyboard/i]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 70b8ad7e-85af-4b24-ac75-b6f96a50ab77
+    m_ActionName: Game/L2[/Keyboard/h]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: acbbd988-043d-428f-bd2a-7775194693d0
+    m_ActionName: Game/R2[/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cde07a93-b6e5-4774-b7da-4d8283a8a6b6
+    m_ActionName: Game/Direction[/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8784ce09-8678-4d87-8ffe-4ded4ec874d3
+    m_ActionName: Game/Pause1[/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1891923850}
+        m_TargetAssemblyTypeName: PlayerFrame, Assembly-CSharp
+        m_MethodName: OnSubmit1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: b99757e0-34cc-4b00-905e-69f28a506dd1
+    m_ActionName: Game/Submit1[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1891923850}
+        m_TargetAssemblyTypeName: PlayerFrame, Assembly-CSharp
+        m_MethodName: OnCancel1
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 79c6a67f-5c97-4528-bdba-f684e39a9e4c
+    m_ActionName: Game/Cancel1[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a2a534ce-de59-4649-9359-1b87a6a1812b
+    m_ActionName: Game/Direction2[/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: a891b449-ba8a-4afc-b70e-e0e4a85f27dc
+    m_ActionName: Game/Cancel2[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: c531a448-64e1-4f69-ba98-8b5de6976e3d
+    m_ActionName: Game/Submit2[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 33af467b-10f5-40d8-8c29-ffcd4aea8f55
+    m_ActionName: Game/Pause2[/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 2cc4f9ed-c17c-4f37-bf86-278540e04c07
+    m_ActionName: Game/Pause[/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 905c3bf7-3a2e-44db-ac73-623d361a4886
+    m_ActionName: UI/A1[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: b657895f-3864-494a-b647-9e3f3a66d716
+    m_ActionName: UI/B1[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 48eb7d16-a643-493a-bc37-474c6e477119
+    m_ActionName: UI/X1[/XInputControllerWindows/buttonWest]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 9f2615ce-6622-42c5-bdfd-d47d9767e110
+    m_ActionName: UI/Y1[/XInputControllerWindows/buttonNorth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: cb64f6ed-c5f6-4611-8b7a-4848e9ca51d8
+    m_ActionName: UI/L1[/XInputControllerWindows/leftShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 01902937-5648-468d-99bd-5ac2103d8277
+    m_ActionName: UI/R1[/XInputControllerWindows/rightShoulder]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 67e40231-2f34-4a30-a57d-0bcd5bb3482f
+    m_ActionName: UI/A2[/Keyboard/t]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 8c71576d-b201-4f6c-8f1f-5eddd3fea4c0
+    m_ActionName: UI/B2[/Keyboard/y]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 761886ab-a911-474e-896b-dc6c3af1e69e
+    m_ActionName: UI/X2[/Keyboard/u]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 88242d1b-b6df-4d8c-a21e-dfefa263d2ca
+    m_ActionName: UI/Y2[/Keyboard/i]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4d9421b9-4d2c-4abc-9da3-2f92b89459f3
+    m_ActionName: UI/L2[/Keyboard/h]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: f13cda13-6329-4c22-91f1-a47ff631ac8a
+    m_ActionName: UI/R2[/Keyboard/j]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 502fe318-bac1-41a2-ada9-34194b265c02
+    m_ActionName: UI/Pause2[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 722db351-9437-4542-af77-9f6d51c15394
+    m_ActionName: UI/Cancel2[/Keyboard/backspace]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: fbbcc1ae-cd04-4496-8735-d8ddd10f6dcc
+    m_ActionName: UI/Submit2[/Keyboard/enter]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 64986fc0-cea5-45d8-a9cc-93832bd95eae
+    m_ActionName: UI/Direction2[/XInputControllerWindows/leftStick]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 4455d327-6f36-4378-8e3b-2e745a9bbd42
+    m_ActionName: UI/Cancel1[/XInputControllerWindows/buttonEast]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e20afdc2-462e-4257-93c0-4b28f9663711
+    m_ActionName: UI/Submit1[/XInputControllerWindows/buttonSouth]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: 5c6ac5ef-200e-44c9-8dff-d465bf53fff5
+    m_ActionName: UI/Pause1[/XInputControllerWindows/start]
+  - m_PersistentCalls:
+      m_Calls: []
+    m_ActionId: e98fc386-99db-402b-bb0d-cf8c9e9c21b1
+    m_ActionName: UI/Direction[/XInputControllerWindows/leftStick]
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: Game
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
 --- !u!1 &1957405058
 GameObject:
   m_ObjectHideFlags: 0
@@ -2096,8 +3850,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.00007534, y: -154.47}
-  m_SizeDelta: {x: 731.50024, y: 100}
+  m_AnchoredPosition: {x: -0.00019455, y: -183.13}
+  m_SizeDelta: {x: 884.00037, y: 142.49432}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1976416906
 MonoBehaviour:
@@ -2171,8 +3925,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000011444, y: 46.303}
-  m_SizeDelta: {x: 316.36694, y: 316.36694}
+  m_AnchoredPosition: {x: 0, y: 68.4}
+  m_SizeDelta: {x: 360.46246, y: 360.46246}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2134064989
 CanvasRenderer:
@@ -2217,7 +3971,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3567689191615647317, guid: 4034ebaed9ff7d047b46c3214df9e47b, type: 3}
   m_PrefabInstance: {fileID: 3567689191326855224}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 1497412922}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b4f36c71d8c368644900542dad7b0dc6, type: 3}
@@ -2233,6 +3987,10 @@ PrefabInstance:
     - target: {fileID: 3567689191615647316, guid: 4034ebaed9ff7d047b46c3214df9e47b, type: 3}
       propertyPath: m_Name
       value: CharMenu Manager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3567689191615647317, guid: 4034ebaed9ff7d047b46c3214df9e47b, type: 3}
+      propertyPath: playerControls.m_SingletonActionBindings.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3567689191615647317, guid: 4034ebaed9ff7d047b46c3214df9e47b, type: 3}
       propertyPath: Players.Array.data[0]
@@ -2254,6 +4012,26 @@ PrefabInstance:
       propertyPath: StageDesc
       value: 
       objectReference: {fileID: 957033411}
+    - target: {fileID: 3567689191615647317, guid: 4034ebaed9ff7d047b46c3214df9e47b, type: 3}
+      propertyPath: playerControls.m_Id
+      value: 44f336dc-7b49-48c2-8893-58af34c4db91
+      objectReference: {fileID: 0}
+    - target: {fileID: 3567689191615647317, guid: 4034ebaed9ff7d047b46c3214df9e47b, type: 3}
+      propertyPath: playerControls.m_Name
+      value: Player Controls
+      objectReference: {fileID: 0}
+    - target: {fileID: 3567689191615647317, guid: 4034ebaed9ff7d047b46c3214df9e47b, type: 3}
+      propertyPath: PIReference
+      value: 
+      objectReference: {fileID: 1497412924}
+    - target: {fileID: 3567689191615647317, guid: 4034ebaed9ff7d047b46c3214df9e47b, type: 3}
+      propertyPath: playerControls.m_SingletonActionBindings.Array.data[0].m_Id
+      value: 1c096053-249a-4f0e-9a59-3be68d7c4441
+      objectReference: {fileID: 0}
+    - target: {fileID: 3567689191615647317, guid: 4034ebaed9ff7d047b46c3214df9e47b, type: 3}
+      propertyPath: playerControls.m_SingletonActionBindings.Array.data[0].m_Action
+      value: Player Controls
+      objectReference: {fileID: 0}
     - target: {fileID: 3567689191615647318, guid: 4034ebaed9ff7d047b46c3214df9e47b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 235.23894
@@ -2354,6 +4132,10 @@ PrefabInstance:
     - target: {fileID: 8583652539389272779, guid: 690fc35fd2d4c9b4c983c77f1f893336, type: 3}
       propertyPath: m_Name
       value: TransitionManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8583652539389272779, guid: 690fc35fd2d4c9b4c983c77f1f893336, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8583652540831869400, guid: 690fc35fd2d4c9b4c983c77f1f893336, type: 3}
       propertyPath: m_LocalRotation.x

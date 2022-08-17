@@ -47,7 +47,7 @@ public class WinnerMenu : MonoBehaviour
 
     void Start()
     {
-        
+        DeExitConfirmation();   
     }
 
     // Update is called once per frame
@@ -78,7 +78,7 @@ public class WinnerMenu : MonoBehaviour
     public void Rematch()
     {
         GameManager.GM.ResetFlag = true;
-        GameManager.GM.FadeOutFlag = true;
+        TransitionManager.TM.FadeOutFlag = true;
 
         /*string scene = SceneManager.GetActiveScene().ToString();
         //Debug.Log(scene);
@@ -125,6 +125,11 @@ public class WinnerMenu : MonoBehaviour
 
     public void CharacterSelect()
     {
-        GameManager.GM.FadeOutFlag = true;
+        TransitionManager.TM.CharSelect();
+    }
+
+    public void Exit()
+    {
+        TransitionManager.TM.Exit();
     }
 }

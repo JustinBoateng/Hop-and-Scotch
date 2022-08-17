@@ -86,9 +86,9 @@ public class GameManager : MonoBehaviour
         //Debug.Log("Hidding Win Screen");
         WM.Reset();
         WM.gameObject.SetActive(false);
-        FadeInFlag = true;
-        FadeOutFlag = false;
-        FadeValue = 1;
+        //FadeInFlag = true;
+        //FadeOutFlag = false;
+        //FadeValue = 1;
 
         Winner = -1;
         Decision = false;
@@ -99,12 +99,12 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (FadeInFlag && FadeValue > 0) FadeIn();
-        if (FadeOutFlag && FadeValue <= 100) FadeOut();
+        // if (FadeInFlag && FadeValue > 0) FadeIn(); //screen turnsclear. Black goes from 100 to 0
+        // if (FadeOutFlag && FadeValue <= 100) FadeOut(); //screen turns black. Black screen goes from 0 to 100
 
 
         //Beginning Countdown
-        if (StartCountdown > 0 && !FadeInFlag && !FadeOutFlag) StartCountdown = StartCountdown - CountdownRate;
+        if (StartCountdown > 0 && !TransitionManager.TM.FadeInFlag && !TransitionManager.TM.FadeOutFlag) StartCountdown = StartCountdown - CountdownRate;
         else if (StartCountdown <= 0 && !WinnerDecided) PlayersCanMove = true;
 
         //clock is active if the game has started and has not finished.
@@ -198,6 +198,7 @@ public class GameManager : MonoBehaviour
         Clock.text = TimerMinutes.ToString() + ":" + TimerSeconds.ToString("00") + ":" + (TimerMilliSeconds * 100).ToString("00");
     }
 
+    /*
     public void FadeIn()
     {
         if ((FadeValue - FadeRate) > 0)
@@ -237,7 +238,7 @@ public class GameManager : MonoBehaviour
 
         }
     }
-
+    */
     public void ResetSinglePlayer()
     {
         //fade out

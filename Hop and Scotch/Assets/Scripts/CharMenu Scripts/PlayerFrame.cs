@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
 
 public class PlayerFrame : MonoBehaviour
 {
@@ -16,6 +18,9 @@ public class PlayerFrame : MonoBehaviour
     public int PlayerNumber = 0;
     public int currIcon; //cycles through the array of icons. Is a number
     public int MenuHorizontal;
+    public int MenuVertical;
+    public float KeyboardMenuVal;
+    public Vector2 DirNavValue;
     public bool inputcheck; //used to prevent holding left or right
     public bool buttoncheck; //used to prevent holding a button
 
@@ -26,6 +31,11 @@ public class PlayerFrame : MonoBehaviour
     public string ColorSelected = ""; //notes the color that was finally selected
     public bool FullSelected = false; //becomes 1 if CharSelected and ColorSelected are both solidified
 
+    public InputAction playerControls;
+    public bool canMove;
+    public bool choosingStage;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,43 +44,36 @@ public class PlayerFrame : MonoBehaviour
 
         UpdateFrame(CharMenuManager.CMM.Characters[currIcon]);
 
+        canMove = true;
+        choosingStage = false;
+        buttoncheck = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        MenuHorizontal = (int) Input.GetAxisRaw("P" + PlayerNumber + " Horizontal");
-        //Debug.Log(MenuHorizontal);
-
-        if(!FullSelected) Movement();
-
-        if (Input.GetButtonDown("P" + PlayerNumber + " Submit") && CharSelected == -1 && ColorSelected == "" && !buttoncheck)
+       
+        if (canMove || choosingStage)
         {
-            CharSelected = currIcon;
-            buttoncheck = true;
+            if (playerControls.ReadValue<Vector2>().x > 0.4)
+                MenuHorizontal = 1;
+            else if (playerControls.ReadValue<Vector2>().x < -0.4f)
+                MenuHorizontal = -1;
+            else MenuHorizontal = 0;
+
+        
         }
 
-        if (Input.GetButtonDown("P" + PlayerNumber + " Submit") && CharSelected != -1 && ColorSelected == "" && !buttoncheck)
+        Movement();
+    
+
+        if (CharSelected != -1 && ColorSelected != "" && canMove && !choosingStage)
         {
-            ColorSelected = CharCode;
-            buttoncheck = true;
+            FullSelected = true;
+            MoveFlag(false);
         }
 
-        if (Input.GetButtonDown("P" + PlayerNumber + " Cancel") && !buttoncheck)
-        {
-            UpdateFrame(CharMenuManager.CMM.Characters[currIcon]); //set back the SpriteSample Color
-            CharSelected = -1;
-            ColorSelected = "";
-            FullSelected = false;
-            buttoncheck = true;
-        }
-
-        if (Input.GetButtonUp("P" + PlayerNumber + " Submit") || Input.GetButtonUp("P" + PlayerNumber + " Cancel")) buttoncheck = false;
-
-
-
-        if (CharSelected != -1 && ColorSelected != "") FullSelected = true;
-        else FullSelected = false;
+  
     }
 
 
@@ -166,6 +169,198 @@ public class PlayerFrame : MonoBehaviour
 
     public void resetFrame()
     {
+        UpdateFrame(CharMenuManager.CMM.Characters[currIcon]); //set back the SpriteSample Color
         CharSelected = -1;
+        ColorSelected = "";
+        FullSelected = false;
+        buttoncheck = false;
+        MoveFlag(true);
+        choosingStage = false;
     }
+
+    private void OnEnable()
+    {
+        playerControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerControls.Disable();
+    }
+
+    public void OnSubmit(InputAction.CallbackContext context)
+    {
+        if (context.started && !buttoncheck)
+        {
+            Debug.Log("Selected");
+        
+            if (CharSelected != -1 && ColorSelected == "" && !buttoncheck)
+            {
+                ColorSelected = CharCode;
+                buttoncheck = true;
+            }
+
+            if (CharSelected == -1 && ColorSelected == "" && !buttoncheck)
+            {
+                CharSelected = currIcon;
+                buttoncheck = true;
+            }
+        }
+
+        if (context.canceled)
+        {
+            buttoncheck = false;
+        }
+
+        switch (context.phase)
+        {
+            case InputActionPhase.Started:
+                Debug.Log(context.interaction + " - Started");
+                break;
+
+            case InputActionPhase.Performed:
+                Debug.Log(context.interaction + " - Performed");
+                break;
+
+            case InputActionPhase.Canceled:
+                Debug.Log(context.interaction + " - Canceled");
+                break;
+        }
+    }
+
+    public void OnCancel(InputAction.CallbackContext context)
+    {
+
+        if (context.started)
+        {
+
+            {
+                UpdateFrame(CharMenuManager.CMM.Characters[currIcon]); //set back the SpriteSample Color
+                CharSelected = -1;
+                ColorSelected = "";
+                FullSelected = false;
+                buttoncheck = false;
+                MoveFlag(true);
+                choosingStage = false;
+            }
+        }
+    }
+
+    private void OnDirection(InputValue Value)
+    {
+        if (canMove || choosingStage)
+        {
+            DirNavValue = Value.Get<Vector2>();
+
+            if (Value.Get<Vector2>().x > 0.5f)
+                MenuHorizontal = 1;
+            else if (Value.Get<Vector2>().x < -0.5f)
+                MenuHorizontal = -1;
+            else MenuHorizontal = 0;
+            /*
+            if (Value.Get<Vector2>().y > 0.8f)
+                MenuVertical = 1;
+            else if (Value.Get<Vector2>().y < -0.8f)
+                MenuVertical = -1;
+            else MenuVertical = 0;
+
+            Debug.Log("Hor: " + MenuHorizontal);
+            Debug.Log("Ver: " + MenuVertical);
+            */
+        }
+    }
+
+    public void MoveFlag(bool flag)
+    {
+        canMove = flag;
+    }
+
+
+    public void OnSubmit1(InputAction.CallbackContext context)
+    {
+            Debug.Log("Selected - Submit 1");
+        if (context.started && !buttoncheck)
+        {
+            if (CharSelected != -1 && ColorSelected == "" && !buttoncheck)
+            {
+                ColorSelected = CharCode;
+                buttoncheck = true;
+            }
+
+            if (CharSelected == -1 && ColorSelected == "" && !buttoncheck)
+            {
+                CharSelected = currIcon;
+                buttoncheck = true;
+            }
+        }
+
+        if (context.canceled)
+        {
+            buttoncheck = false;
+        }
+    }
+
+    public void OnCancel1(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            {
+                UpdateFrame(CharMenuManager.CMM.Characters[currIcon]); //set back the SpriteSample Color
+                CharSelected = -1;
+                ColorSelected = "";
+                FullSelected = false;
+                buttoncheck = false;
+                MoveFlag(true);
+                choosingStage = false;
+            }
+        }
+
+    }
+
+    public void OnSubmit2(InputAction.CallbackContext context)
+    {
+
+        if (context.started && !buttoncheck)
+        {
+            Debug.Log("Selected - Submit 2");
+
+            if (CharSelected != -1 && ColorSelected == "" && !buttoncheck)
+            {
+                ColorSelected = CharCode;
+                buttoncheck = true;
+            }
+
+            if (CharSelected == -1 && ColorSelected == "" && !buttoncheck)
+            {
+                CharSelected = currIcon;
+                buttoncheck = true;
+            }
+
+        }
+        if (context.canceled)
+        {
+            buttoncheck = false;
+        }
+
+    }
+
+    public void OnCancel2(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            {
+                UpdateFrame(CharMenuManager.CMM.Characters[currIcon]); //set back the SpriteSample Color
+                CharSelected = -1;
+                ColorSelected = "";
+                FullSelected = false;
+                buttoncheck = false;
+                MoveFlag(true);
+                choosingStage = false;
+            }
+        }
+    }
+    //all the On--- Methods deal only with inputs. They usually access functions that do the real heavy lifting.
+    //keep this ideology when using On--- Functions with the input manager
+
+
 }
