@@ -28,7 +28,7 @@ public class ButtonTester : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        BaseColor = ButtonList[0].GetComponent<Image>().color;
+        BaseColor = new Color32(255,255,255,255); 
         if (PlayerNumber == 1)
         {
             ChangedColorR = 255;

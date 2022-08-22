@@ -320,10 +320,10 @@ public class PlayerFrame : MonoBehaviour
     public void OnSubmit2(InputAction.CallbackContext context)
     {
 
+        Debug.Log("Selected - Submit 2");
+
         if (context.started && !buttoncheck)
         {
-            Debug.Log("Selected - Submit 2");
-
             if (CharSelected != -1 && ColorSelected == "" && !buttoncheck)
             {
                 ColorSelected = CharCode;

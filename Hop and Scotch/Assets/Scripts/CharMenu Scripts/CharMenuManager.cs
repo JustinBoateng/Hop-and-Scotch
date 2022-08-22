@@ -207,8 +207,8 @@ public class CharMenuManager : MonoBehaviour
 
     public void OnSubmit1(InputAction.CallbackContext context)
     {
-        if(selectedfirst == 0)
-        if (allcharsselected && StageSelectFlag <= 0 && context.started)
+        if(selectedfirst == 0)//0 is player 1 in the array
+            if (allcharsselected && StageSelectFlag <= 0 && context.started)
         {
             MultiPlayerTransition();
         }
@@ -234,7 +234,7 @@ public class CharMenuManager : MonoBehaviour
 
     public void OnSubmit2(InputAction.CallbackContext context)
     { 
-        if(selectedfirst == 1)
+        if(selectedfirst == 1) //1 is player 2 in the array
         if (allcharsselected && StageSelectFlag <= 0 && context.started)
         {
             MultiPlayerTransition();

@@ -56,6 +56,8 @@ public class Player : MonoBehaviour
 
     public PlayerInput PIRef;
 
+    public bool PauseFlag = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -335,24 +337,24 @@ public class Player : MonoBehaviour
     }
 
 
-    public void OnA1(InputValue V)
+    public void OnA1(InputAction.CallbackContext context)
     {
         if (PlayerNumber != 1) return;
-
-        if (!trip && GameManager.GM.PlayersCanMove)
-        {
-            input = '1';
-            Debug.Log(input);
-            inputted = true;
-            InputEval();
-        }
+        if(context.performed)
+            if (!trip && GameManager.GM.PlayersCanMove)
+            {
+                input = '1';
+                Debug.Log(input);
+                inputted = true;
+                InputEval();
+            }
     }
 
-    public void OnB1(InputValue V)
+    public void OnB1(InputAction.CallbackContext context)
     {
         if (PlayerNumber != 1) return;
-
-        if (!trip && GameManager.GM.PlayersCanMove)
+        if (context.performed)
+            if (!trip && GameManager.GM.PlayersCanMove)
         {
             input = '2';
             Debug.Log(input);
@@ -362,11 +364,11 @@ public class Player : MonoBehaviour
     }
 
 
-    public void OnX1(InputValue V)
+    public void OnX1(InputAction.CallbackContext context)
     {
         if (PlayerNumber != 1) return;
-
-        if (!trip && GameManager.GM.PlayersCanMove)
+        if (context.performed)
+            if (!trip && GameManager.GM.PlayersCanMove)
         {
             input = '3';
             Debug.Log(input);
@@ -375,11 +377,11 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void OnY1(InputValue V)
+    public void OnY1(InputAction.CallbackContext context)
     {
         if (PlayerNumber != 1) return;
-
-        if (!trip && GameManager.GM.PlayersCanMove)
+        if (context.performed)
+            if (!trip && GameManager.GM.PlayersCanMove)
         {
             input = '4';
             Debug.Log(input);
@@ -389,11 +391,11 @@ public class Player : MonoBehaviour
     }
 
 
-    public void OnL1(InputValue V)
+    public void OnL1(InputAction.CallbackContext context)
     {
         if (PlayerNumber != 1) return;
-
-        if (!trip && GameManager.GM.PlayersCanMove)
+        if (context.performed)
+            if (!trip && GameManager.GM.PlayersCanMove)
         {
             input = '5';
             Debug.Log(input);
@@ -402,11 +404,11 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void OnR1(InputValue V)
+    public void OnR1(InputAction.CallbackContext context)
     {
         if (PlayerNumber != 1) return;
-
-        if (!trip && GameManager.GM.PlayersCanMove)
+        if (context.performed)
+            if (!trip && GameManager.GM.PlayersCanMove)
         {
             input = '6';
             Debug.Log(input);
@@ -415,12 +417,12 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void OnA2(InputValue V)
+    public void OnA2(InputAction.CallbackContext context)
     {
         if (PlayerNumber != 2) return;
 
-
-        if (!trip && GameManager.GM.PlayersCanMove)
+        if (context.performed)
+            if (!trip && GameManager.GM.PlayersCanMove)
         {
             input = '1';
             Debug.Log(input);
@@ -429,11 +431,11 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void OnB2(InputValue V)
+    public void OnB2(InputAction.CallbackContext context)
     {
         if (PlayerNumber != 2) return;
-
-        if (!trip && GameManager.GM.PlayersCanMove)
+        if (context.performed)
+            if (!trip && GameManager.GM.PlayersCanMove)
         {
             input = '2';
             Debug.Log(input);
@@ -443,11 +445,11 @@ public class Player : MonoBehaviour
     }
 
 
-    public void OnX2(InputValue V)
+    public void OnX2(InputAction.CallbackContext context)
     {
         if (PlayerNumber != 2) return;
-
-        if (!trip && GameManager.GM.PlayersCanMove)
+        if (context.performed)
+            if (!trip && GameManager.GM.PlayersCanMove)
         {
             input = '3';
             Debug.Log(input);
@@ -456,11 +458,11 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void OnY2(InputValue V)
+    public void OnY2(InputAction.CallbackContext context)
     {
         if (PlayerNumber != 2) return;
-
-        if (!trip && GameManager.GM.PlayersCanMove)
+        if (context.performed)
+            if (!trip && GameManager.GM.PlayersCanMove)
         {
             input = '4';
             Debug.Log(input);
@@ -470,11 +472,11 @@ public class Player : MonoBehaviour
     }
 
 
-    public void OnL2(InputValue V)
+    public void OnL2(InputAction.CallbackContext context)
     {
         if (PlayerNumber != 2) return;
-
-        if (!trip && GameManager.GM.PlayersCanMove)
+        if (context.performed)
+            if (!trip && GameManager.GM.PlayersCanMove)
         {
             input = '5';
             Debug.Log(input);
@@ -483,11 +485,11 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void OnR2(InputValue V)
+    public void OnR2(InputAction.CallbackContext context)
     {
         if (PlayerNumber != 2) return;
-
-        if (!trip && GameManager.GM.PlayersCanMove)
+        if (context.performed)
+            if (!trip && GameManager.GM.PlayersCanMove)
         {
             input = '6';
             Debug.Log(input);
@@ -496,44 +498,65 @@ public class Player : MonoBehaviour
         }
     }
 
-    public void OnPause1(InputValue V)
+    public void OnPause1(InputAction.CallbackContext context)
     {
         if (PlayerNumber != 1) return;
-
-        if (!PauseMenu.PM.isPaused && !GameManager.GM.WinnerDecided)
+        Debug.Log("P1 context: " + context);
+        if (context.performed)
         {
-            PauseMenu.PM.Pause();
-            Debug.Log("Paused P1");
-            PIRef.SwitchCurrentActionMap("UI");
-            Debug.Log("Current Action Map is: " + PIRef.currentActionMap);
-        }
-        else if (PauseMenu.PM.isPaused)
-        {
-            PauseMenu.PM.Resume();
-            Debug.Log("Paused P1");
-            PIRef.SwitchCurrentActionMap("Game");
-            Debug.Log("Current Action Map is: " + PIRef.currentActionMap);
+            if (!PauseMenu.PM.isPaused && !GameManager.GM.WinnerDecided)
+            {
+                PauseMenu.PM.Pause();
+                //Debug.Log("Paused P1");
+                PIRef.SwitchCurrentActionMap("UI");
+                //Debug.Log("Current Action Map is: " + PIRef.currentActionMap);
+            }
+            else if (PauseMenu.PM.isPaused)
+            {
+                PauseMenu.PM.Resume();
+                //Debug.Log("Paused P1");
+                PIRef.SwitchCurrentActionMap("Game");
+                //Debug.Log("Current Action Map is: " + PIRef.currentActionMap);
+            }
         }
     }
 
 
-    public void OnPause2(InputValue V)
+    public void OnPause2(InputAction.CallbackContext context)
     {
         if (PlayerNumber != 2) return;
+        Debug.Log("P2 context: " + context);
 
-        if (!PauseMenu.PM.isPaused && !GameManager.GM.WinnerDecided)
+        if (context.performed)
         {
-            PauseMenu.PM.Pause();
-            Debug.Log("Paused P2");
-            PIRef.SwitchCurrentActionMap("UI");
-            Debug.Log("Current Action Map is: " + PIRef.currentActionMap);
+            if (!PauseMenu.PM.isPaused && !GameManager.GM.WinnerDecided)
+            {
+                PauseMenu.PM.Pause();
+                Debug.Log("Paused P2");
+                PIRef.SwitchCurrentActionMap("UI");
+                PauseFlag = true;
+                //Debug.Log("Current Action Map is: " + PIRef.currentActionMap);
+            }
+            else if (PauseMenu.PM.isPaused)
+            {
+                PauseMenu.PM.Resume();
+                Debug.Log("UnPaused P2");
+                PIRef.SwitchCurrentActionMap("Game");
+                PauseFlag = true;
+                //Debug.Log("Current Action Map is: " + PIRef.currentActionMap);
+            }
         }
-        else if (PauseMenu.PM.isPaused)
-        {
+
+        if (context.canceled) PauseFlag = false;
+    }
+
+    public void ExitingSceneUnPause()
+    {
             PauseMenu.PM.Resume();
-            Debug.Log("Paused P2");
+            Debug.Log("Paused Exit");
             PIRef.SwitchCurrentActionMap("Game");
             Debug.Log("Current Action Map is: " + PIRef.currentActionMap);
-        }
-    }
+            TransitionManager.TM.Exit();
+    }//this function is for the purpose of unpausing the game before changing screens
+
 }

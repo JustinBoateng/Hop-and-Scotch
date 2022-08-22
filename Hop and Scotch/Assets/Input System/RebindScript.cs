@@ -102,5 +102,8 @@ public class RebindScript : MonoBehaviour
 
             .Start();
         EventSystem.current.SetSelectedGameObject(ButtonRef);
+
+        GAMEActionToRemap.action.Enable();
+        UIActionToRemap.action.Enable();
     }
 }

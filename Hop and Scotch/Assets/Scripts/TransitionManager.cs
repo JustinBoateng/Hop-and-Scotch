@@ -52,7 +52,7 @@ public class TransitionManager : MonoBehaviour
     void Update()
     {
         if (FadeInFlag && FadeValue > 0) FadeIn();
-        if (FadeOutFlag && FadeValue <= 100) FadeOut();
+        if (FadeOutFlag && FadeValue <= 1) FadeOut();
         //other classes trigger the fadeIn/FadeOut flags.
         //100 means the black screen is fully there. > 0 checks for that very case.
         //0 means the black screen is completely see through. <= checks for that before fading out (fading to black)
@@ -102,9 +102,17 @@ public class TransitionManager : MonoBehaviour
             {
                 if (GameManager.GM.ResetFlag && GameManager.GM.NoofPlayers == 1) GameManager.GM.ResetSinglePlayer();
                 else if (GameManager.GM.ResetFlag && GameManager.GM.NoofPlayers == 2) GameManager.GM.ResetMultiPlayer();
-                else SceneManager.LoadScene(NextScene);
-            }
+                else
+                {
+                    GameObject.Destroy(GameManager.GM.gameObject);
+                    SceneManager.LoadScene(NextScene);
+
+                }
+
+            }//if You're trying to reset the stage or move out of the scene given that the scene you're exiting had a GameManager
+
             else SceneManager.LoadScene(NextScene);
+            //if your moving from a scene that didnt have a game manager, like, say, the MainMenu or CharMenu
         }
     }
 
@@ -144,5 +152,11 @@ public class TransitionManager : MonoBehaviour
     {
         FadeOutFlag = true;
         NextScene = "Character-Select-Scene";
+    }
+
+    public void SingleCharSelect()
+    {
+        FadeOutFlag = true;
+        NextScene = "SingleCharacter-Select-Scene";
     }
 }
