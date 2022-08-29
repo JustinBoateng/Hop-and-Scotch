@@ -45,7 +45,6 @@ public class Player : MonoBehaviour
 
     public Animator animator;
 
-    public bool Hopping = false;
     public bool Midair = false;
     public int HopLevel = 0;
     public bool Win = false;
@@ -57,6 +56,8 @@ public class Player : MonoBehaviour
     public PlayerInput PIRef;
 
     public bool PauseFlag = false;
+
+    public bool HalfwayLeap = false;
 
     // Start is called before the first frame update
     void Start()
@@ -162,6 +163,7 @@ public class Player : MonoBehaviour
         animator.SetBool("Lose", Lose);
         animator.SetBool("Tripped", trip && !Midair);
         animator.SetFloat("TripLag", triplag);
+        animator.SetBool("HalfwayLeap", HalfwayLeap);
     }
 
     public void GetAnimation(string code)
@@ -192,8 +194,11 @@ public class Player : MonoBehaviour
         this.transform.position = temppointAB_BC.transform.position;
         InterpolateAmount = InterpolateAmount + BaseSpeed;
 
-        if (InterpolateAmount > 0.02 && InterpolateAmount < 0.97) Midair = true;
+        if (InterpolateAmount > 0.02 && InterpolateAmount < 0.98) Midair = true;
         else Midair = false;
+
+        if (InterpolateAmount < 0.5) HalfwayLeap = false;
+        else HalfwayLeap = true;
     }//sets the midair movement and also checks if the player is in the midair state
 
     public void InputEval()

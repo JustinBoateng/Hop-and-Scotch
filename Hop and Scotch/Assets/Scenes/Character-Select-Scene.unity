@@ -529,6 +529,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6849993939840183836, guid: 05799ac311dc3064d8db7154712b4ab4, type: 3}
+      propertyPath: AnimationArray.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6849993939840183836, guid: 05799ac311dc3064d8db7154712b4ab4, type: 3}
+      propertyPath: AnimationArray.Array.data[2]
+      value: 
+      objectReference: {fileID: 9100000, guid: 64c0a7b6066f33540bd6df6a3017a62b, type: 2}
     - target: {fileID: 6849993939840183837, guid: 05799ac311dc3064d8db7154712b4ab4, type: 3}
       propertyPath: m_Name
       value: AnimationEncyclopedia
