@@ -9,6 +9,7 @@ using UnityEngine.EventSystems;
 public class TransitionManager : MonoBehaviour
 {
     public static TransitionManager TM;
+    public static int NoofPlayers = 1;
 
     public string[] PlayerAnimationCodes;
 
@@ -124,7 +125,7 @@ public class TransitionManager : MonoBehaviour
 
 
         FadeOutFlag = true;
-        NextScene = "MultiPlayer-GameScene";
+        NextScene = "MultiPlayer-Scene";
 
         //The GameManager sets the Codes to the players at Start
     }
@@ -137,7 +138,7 @@ public class TransitionManager : MonoBehaviour
 
 
         FadeOutFlag = true;
-        NextScene = "SinglePlayer-GameScene";
+        NextScene = "SinglePlayer-Scene";
 
         //The GameManager sets the Codes to the players at Start
     }
@@ -148,15 +149,12 @@ public class TransitionManager : MonoBehaviour
         NextScene = "TitleandMain-Scene";
     }
 
-    public void CharSelect()
+    public void CharSelect(int n) //when calling this function, insert the number of players while you do it.
     {
         FadeOutFlag = true;
         NextScene = "Character-Select-Scene";
+        NoofPlayers = n;
     }
 
-    public void SingleCharSelect()
-    {
-        FadeOutFlag = true;
-        NextScene = "SingleCharacter-Select-Scene";
-    }
+
 }

@@ -32,7 +32,7 @@ public class Spot : MonoBehaviour
         
     }
 
-    public void setButt(int bt, char c, float yoffset)
+    public void setButt(int bt, char c, float yoffset, float buttoffset)
     {
         //set the buton type and the actual button 
         buttontype = bt;
@@ -57,7 +57,7 @@ public class Spot : MonoBehaviour
         else if (((int)char.GetNumericValue(c) > 0) && ((int)char.GetNumericValue(c) < 8))
         {
             //Debug.Log("Type: " + bt + "  Button Number: " + (int)char.GetNumericValue(c));
-            GameObject BI = Instantiate(ButtonPrefab, new Vector3(this.transform.position.x, this.transform.position.y - 0.4f, -1), this.transform.rotation);
+            GameObject BI = Instantiate(ButtonPrefab, new Vector3(this.transform.position.x, this.transform.position.y - buttoffset, -1), this.transform.rotation);
             BI.transform.SetParent(this.transform);
             BI.GetComponent<SpriteRenderer>().sprite = ButtonEncyclopedia.BS.RetrieveSprite(bt, (int)char.GetNumericValue(c)); //the -0 converts the char to an int
             BI.GetComponent<SpriteRenderer>().sortingLayerName = "Spot Layer";

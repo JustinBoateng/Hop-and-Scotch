@@ -59,6 +59,9 @@ public class Player : MonoBehaviour
 
     public bool HalfwayLeap = false;
 
+    public float LandCooldown = 1.0f;
+    public float LandCooldownRate = 0.1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -80,7 +83,8 @@ public class Player : MonoBehaviour
     void Update()
     {
         SetAnimation();
-        
+
+        if (!Midair) landCalc();
       
 
 
@@ -106,9 +110,8 @@ public class Player : MonoBehaviour
                 //process of leaping
                 if (InterpolateAmount < 1)
                 {
-                    //Debug.Log("Leaping");
                     Leaping();
-                }
+                } //interpolateamount is changed in this function
 
                 //if we reached the end of the leap
                 else
@@ -119,23 +122,32 @@ public class Player : MonoBehaviour
                         Leap = false;
                         JumpPathTransfer();
                         Speed = BaseSpeed;
+                        LandCooldown = 1;
+
 
                         HopLevel = 0;
                     }
 
                     //if we havent caught up to the bounce pointer
-                    else
+                    else if (endPointSpot != CourseRef.getBP().getSpot() && LandCooldown > 0)
                     {
                         SetPoints();
                         JumpPathTransfer();
-                        InterpolateAmount = 0;
+                        landCalc();
+                    }
 
-                        if (successfulHops <= MaxSuccessfulHops)
-                        {
-                            successfulHops++;
-                            Speed = BaseSpeed + (successfulHops / 80);
-                        }
+                    else
+                    {
+                            SetPoints();
+                            JumpPathTransfer();
+                            InterpolateAmount = 0;
+                            LandCooldown = 1;
 
+                            if (successfulHops <= MaxSuccessfulHops)
+                            {
+                                successfulHops++;
+                                Speed = BaseSpeed + (successfulHops / 80);
+                            }
                     }
                     //if the spot the player is at is the same as the slot the bp is at, put leap to false
                     //else, set pointB to where bp is currently at and Leap again
@@ -339,6 +351,12 @@ public class Player : MonoBehaviour
                 triplag = basetriplag;
             }
         }
+    }
+
+    private void landCalc()
+    {
+        if(LandCooldown > 0 )
+        LandCooldown = LandCooldown - LandCooldownRate;
     }
 
 

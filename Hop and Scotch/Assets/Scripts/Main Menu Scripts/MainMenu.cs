@@ -19,6 +19,11 @@ public class MainMenu : MonoBehaviour
     public GameObject MainMenuBatch;
     public GameObject OptionsBatch;
     public GameObject ButtonMappingBatch;
+    public GameObject ExitConfirmationBatch;
+
+    public GameObject ArcadeMenuBatch;
+    public GameObject CharacterSelectBatch;
+    public GameObject CSGraphicsBatch;
 
     public GameObject FirstMainMenuButton;
 
@@ -33,6 +38,12 @@ public class MainMenu : MonoBehaviour
         TitleScreenBatch.SetActive(true);
         MainMenuBatch.SetActive(false);
         OptionsBatch.SetActive(false);
+        ExitConfirmationBatch.SetActive(false);
+
+        ArcadeMenuBatch.SetActive(false);
+        CharacterSelectBatch.SetActive(false);
+        CSGraphicsBatch.SetActive(false);
+
         DeInteract();
 
     }
@@ -46,15 +57,10 @@ public class MainMenu : MonoBehaviour
 
 
 
-    public void CharacterSelect()
+    public void CharacterSelect(int n)
     {
-        TransitionManager.TM.CharSelect();
+        TransitionManager.TM.CharSelect(n);
     }//Multiplayer
-
-    public void SingleCharacterSelect()
-    {
-        TransitionManager.TM.SingleCharSelect();
-    }//SinglePlayer
 
     public void OnStart(InputAction.CallbackContext context)
     {
@@ -66,7 +72,7 @@ public class MainMenu : MonoBehaviour
                 MainMenuBatch.SetActive(true);
                 EventSystem.current.SetSelectedGameObject(FirstMainMenuButton);
             }
-    }
+    } // this code handles the transition from the title screen to the main menu
 
     public void OnCancel(InputAction.CallbackContext context)
     {
@@ -99,4 +105,8 @@ public class MainMenu : MonoBehaviour
         BMBState = true;
     }
 
+    public void QuitGame()
+    {
+        Application.Quit();
+    }
 }

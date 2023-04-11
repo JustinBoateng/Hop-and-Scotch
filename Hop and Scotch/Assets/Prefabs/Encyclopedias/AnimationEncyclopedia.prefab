@@ -46,3 +46,4 @@ MonoBehaviour:
   AnimationArray:
   - {fileID: 9100000, guid: 23fd6f265a4c1cc4f9e58e684bcdeb55, type: 2}
   - {fileID: 9100000, guid: f0c66ff5b4d9d9e4792daecbc197d11b, type: 2}
+  - {fileID: 9100000, guid: 64c0a7b6066f33540bd6df6a3017a62b, type: 2}

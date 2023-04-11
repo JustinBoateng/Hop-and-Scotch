@@ -26,6 +26,7 @@ public class Course : MonoBehaviour
 
     public float SpotPosTracker;
     public float SpotOffset;
+    public float buttonlabeloffset;
 
     public GameObject[] CourseSpotForme; //used as a reference to each spot
     public Player PlayerReference;
@@ -101,7 +102,7 @@ public class Course : MonoBehaviour
 
             SpotPosTracker = SpotPosTracker + SpotOffset; //handles the x offset position
 
-            s.GetComponent<Spot>().setButt(buttonType, path[i], yoffset); //sets the sprite of the spot block, and also the button prompt
+            s.GetComponent<Spot>().setButt(buttonType, path[i], yoffset, buttonlabeloffset); //sets the sprite of the spot block, and also the button prompt
 
             s.transform.SetParent(BlockFolder.transform);
 

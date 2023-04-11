@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     public static GameManager GM;
 
     public Player[] Players;
-    public int NoofPlayers;
+    public int NoofPlayers = 1;
 
     public int Winner = -1;
     public bool WinnerDecided = false;
@@ -305,8 +305,10 @@ public class GameManager : MonoBehaviour
         Players[0].GetAnimation(TransitionManager.TM.GetAnimationCodes(0));
         Players[0].SetAnimation();
 
-        Players[1].GetAnimation(TransitionManager.TM.GetAnimationCodes(1));
-        Players[1].SetAnimation();
 
+        if (NoofPlayers > 1) { 
+            Players[1].GetAnimation(TransitionManager.TM.GetAnimationCodes(1));
+            Players[1].SetAnimation();
+        }
     }//this is activated at the start of the Game Scene
 }

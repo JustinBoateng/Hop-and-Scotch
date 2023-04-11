@@ -125,7 +125,7 @@ public class WinnerMenu : MonoBehaviour
 
     public void CharacterSelect()
     {
-        TransitionManager.TM.CharSelect();
+        TransitionManager.TM.CharSelect(2);
     }
 
     public void Exit()
