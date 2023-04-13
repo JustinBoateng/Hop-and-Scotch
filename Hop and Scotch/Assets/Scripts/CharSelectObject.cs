@@ -10,6 +10,7 @@ public class CharSelectObject : MonoBehaviour
     [SerializeField] private RuntimeAnimatorController Animations;
     [SerializeField] private bool isUnlocked = true;
 
+    [SerializeField] public ArcadeObjects[] ArcadePath;
 
     // Start is called before the first frame update
     void Start()
@@ -31,5 +32,15 @@ public class CharSelectObject : MonoBehaviour
     public Sprite GetProfile()
     {
         return ProfileIcon;
+    }
+
+    public string getName()
+    {
+        return Name;
+    }
+
+    public GameObject CSOReference()
+    {
+        return this.gameObject;
     }
 }

@@ -52,3 +52,6 @@ MonoBehaviour:
   ProfileIcon: {fileID: 21300000, guid: 2fffc49336940b94295bfd7c4feaedef, type: 3}
   Animations: {fileID: 9100000, guid: 23fd6f265a4c1cc4f9e58e684bcdeb55, type: 2}
   isUnlocked: 1
+  ArcadePath:
+  - {fileID: 6659613064906797603, guid: 1d0787952c0eadc419ee5c1690f8b045, type: 3}
+  - {fileID: 8644093294020767742, guid: 2a0da4e0b56c401479cf4dc3dcc80b5e, type: 3}

@@ -24,6 +24,7 @@ public class MainMenu : MonoBehaviour
     public GameObject ArcadeMenuBatch;
     public GameObject CharacterSelectBatch;
     public GameObject CSGraphicsBatch;
+    public GameObject StageSelectBatch;
 
     public GameObject FirstMainMenuButton;
 
@@ -43,6 +44,7 @@ public class MainMenu : MonoBehaviour
         ArcadeMenuBatch.SetActive(false);
         CharacterSelectBatch.SetActive(false);
         CSGraphicsBatch.SetActive(false);
+        StageSelectBatch.SetActive(false);
 
         DeInteract();
 
@@ -51,8 +53,7 @@ public class MainMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //OnStart
-        //if()
+
     }
 
 

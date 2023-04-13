@@ -25,4 +25,10 @@ public class StageEncyclopedia : MonoBehaviour
     {
         GameObject s = Instantiate(StageArray[i].gameObject, new Vector2(0, 0), this.transform.rotation);
     }
+
+    public GameObject FullRetrieve(int i)
+    {
+        GameObject s = Instantiate(StageArray[i].gameObject, new Vector2(0, 0), this.transform.rotation);
+        return s;
+    }
 }
