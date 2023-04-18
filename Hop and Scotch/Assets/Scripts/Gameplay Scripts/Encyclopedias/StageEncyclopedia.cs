@@ -11,7 +11,8 @@ public class StageEncyclopedia : MonoBehaviour
     void Start()
     {
         //try this 
-        Retrieve(1);
+        //Retrieve(1);
+        Establish();
     }
 
     // Update is called once per frame
@@ -30,5 +31,17 @@ public class StageEncyclopedia : MonoBehaviour
     {
         GameObject s = Instantiate(StageArray[i].gameObject, new Vector2(0, 0), this.transform.rotation);
         return s;
+    }
+
+    public void Establish()
+    {
+        string s = TransitionManager.TM.currStageCode;
+        GameObject Stage;
+        for (int i = 0; i < StageArray.Length; i++)
+            if (StageArray[i].name == s)
+            {
+                Stage = Instantiate(StageArray[i].gameObject, new Vector2(0, 0), this.transform.rotation);
+                return;
+            }
     }
 }

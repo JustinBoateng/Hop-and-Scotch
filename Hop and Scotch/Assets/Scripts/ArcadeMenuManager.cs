@@ -59,4 +59,10 @@ public class ArcadeMenuManager : MonoBehaviour
     } 
     // The editor cannot take a list as a parameter when the button calls it.
     //so we have to tinker a bit and call the entire CharSelectObject so we can pull their list.
+
+    public void stageEnter()
+    {
+        TransitionManager.TM.SPStageTransition(ArcadeList[currStage].retrieveStageCode());
+        //get the codename and put it through the Transition Manager
+    }
 }

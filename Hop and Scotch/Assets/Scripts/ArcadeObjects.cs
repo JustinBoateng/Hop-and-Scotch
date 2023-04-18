@@ -34,7 +34,7 @@ public class ArcadeObjects : MonoBehaviour
         return TitleCodename;
     }
 
-    public string retrieveStageTitle()
+    public string retrieveStageCode()
     {
         return StageCodename;
     }

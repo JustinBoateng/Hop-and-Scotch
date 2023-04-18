@@ -64,3 +64,13 @@ MonoBehaviour:
   selectedfirst: -1
   hor: 0
   StageCode: SAMPLE
+  playerControls:
+    m_Name: 
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 674641d3-2681-4b73-b735-3ffa0f8f1e7b
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings: []
+  PIReference: {fileID: 0}
+  StageSelectFlag: 1

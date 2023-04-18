@@ -21,6 +21,9 @@ public class TransitionManager : MonoBehaviour
 
     public string NextScene = "N/A";
 
+
+    public string currStageCode = "";
+
     private void Awake()
     {
         if (TM == null)
@@ -156,5 +159,9 @@ public class TransitionManager : MonoBehaviour
         NoofPlayers = n;
     }
 
-
+    public void SPStageTransition(string SC)
+    {
+        currStageCode = SC;
+        SinglePlayerTransition();
+    }
 }

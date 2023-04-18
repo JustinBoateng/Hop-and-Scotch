@@ -48,7 +48,8 @@ public class PauseMenu : MonoBehaviour
 
         Debug.Log("Pausing");
         PlayerReferences[0].PIRef.SwitchCurrentActionMap("UI");
-        PlayerReferences[1].PIRef.SwitchCurrentActionMap("UI");
+        if (PlayerReferences.Length > 1)
+            PlayerReferences[1].PIRef.SwitchCurrentActionMap("UI");
 
         Menu.gameObject.SetActive(true);
         Time.timeScale = 0f;
@@ -63,7 +64,9 @@ public class PauseMenu : MonoBehaviour
         isPaused = false;
 
         PlayerReferences[0].PIRef.SwitchCurrentActionMap("Game");
-        PlayerReferences[1].PIRef.SwitchCurrentActionMap("Game");
+
+        if(PlayerReferences[1])
+            PlayerReferences[1].PIRef.SwitchCurrentActionMap("Game");
 
         Debug.Log("Action Map is " + PlayerReferences[0].PIRef.currentActionMap);
         Debug.Log("Unpausing");

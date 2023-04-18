@@ -52,6 +52,7 @@ MonoBehaviour:
   ButtonPrefab: {fileID: 8316145676446083105, guid: 923510d767832be468c321234d83bf24, type: 3}
   Blank: 0
   BlockVisual: {fileID: 2323807983703122000}
+  BlockVisualExtra: {fileID: 0}
   SpotCode: 
 --- !u!1 &5989848707490004988
 GameObject:

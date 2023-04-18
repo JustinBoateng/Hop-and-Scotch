@@ -68,7 +68,11 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        EstablishPlayers();
+        if (NoofPlayers > 1)
+            EstablishPlayers();
+        //this activates in multiplayer.
+
+        else EstablishPlayer();
 
         TimerSeconds = 0;
         NoofPlayers = Players.Length;
@@ -306,9 +310,15 @@ public class GameManager : MonoBehaviour
         Players[0].SetAnimation();
 
 
-        if (NoofPlayers > 1) { 
-            Players[1].GetAnimation(TransitionManager.TM.GetAnimationCodes(1));
-            Players[1].SetAnimation();
-        }
+        Players[1].GetAnimation(TransitionManager.TM.GetAnimationCodes(1));
+        Players[1].SetAnimation();
+
     }//this is activated at the start of the Game Scene
+
+
+    public void EstablishPlayer()
+    {
+        Players[0].AnimationCode = TransitionManager.TM.currStageCode.Substring(3, 5);
+    }
+
 }
