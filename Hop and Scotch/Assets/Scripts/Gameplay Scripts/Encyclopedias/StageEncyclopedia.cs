@@ -5,6 +5,23 @@ using UnityEngine;
 public class StageEncyclopedia : MonoBehaviour
 {
     public GameObject[] StageArray;
+    public string CurrStage;
+
+    public static StageEncyclopedia SE;
+
+
+    private void Awake()
+    {
+        if (SE == null)
+        {
+            DontDestroyOnLoad(gameObject);
+            SE = this;
+        }
+
+        else if (SE != this)
+            Destroy(gameObject);
+
+    }
 
 
     // Start is called before the first frame update
@@ -12,7 +29,7 @@ public class StageEncyclopedia : MonoBehaviour
     {
         //try this 
         //Retrieve(1);
-        Establish();
+        //Establish();
     }
 
     // Update is called once per frame
@@ -33,14 +50,14 @@ public class StageEncyclopedia : MonoBehaviour
         return s;
     }
 
-    public void Establish()
+    public void Establish(string Stage, string Char)
     {
-        string s = TransitionManager.TM.currStageCode;
-        GameObject Stage;
+        CurrStage = TransitionManager.TM.currStageCode.Substring(0, 2);
+        GameObject Background;
         for (int i = 0; i < StageArray.Length; i++)
-            if (StageArray[i].name == s)
+            if (StageArray[i].name.Contains(Stage) && StageArray[i].name.Contains(Char))
             {
-                Stage = Instantiate(StageArray[i].gameObject, new Vector2(0, 0), this.transform.rotation);
+                Background = Instantiate(StageArray[i].gameObject, new Vector2(0, 0), this.transform.rotation);
                 return;
             }
     }

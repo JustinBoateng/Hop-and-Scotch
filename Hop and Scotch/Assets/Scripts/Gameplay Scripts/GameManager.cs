@@ -68,6 +68,11 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        string StageCode = TransitionManager.TM.currStageCode.Substring(3, 2);
+        string CharCode = TransitionManager.TM.currStageCode.Substring(0, 2);
+
+        StageEncyclopedia.SE.Establish(StageCode, CharCode);
+
         if (NoofPlayers > 1)
             EstablishPlayers();
         //this activates in multiplayer.
@@ -251,6 +256,11 @@ public class GameManager : MonoBehaviour
 
         Players[0].CourseRef.InitializePos();
         Players[0].reachedGoal = false;
+
+        //This part is to set the correct conditions for having the animator return to Idle, even when in the air
+        Players[0].Leap = true;
+        Players[0].InterpolateAmount = 0.99f;
+
         ResetFlag = false;
         WM.Reset();
         Start();
@@ -318,7 +328,13 @@ public class GameManager : MonoBehaviour
 
     public void EstablishPlayer()
     {
-        Players[0].AnimationCode = TransitionManager.TM.currStageCode.Substring(3, 5);
+        Debug.Log("Players array contains: " + TransitionManager.TM.currStageCode.Substring(3, 2));
+
+        Players[0].GetAnimation(TransitionManager.TM.currStageCode.Substring(3, 2));
+        Players[0].SetAnimation();
+
+        //Players[0].AnimationCode = TransitionManager.TM.currStageCode.Substring(3, 2);
+
     }
 
 }

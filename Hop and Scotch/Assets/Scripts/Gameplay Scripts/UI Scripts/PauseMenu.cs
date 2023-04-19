@@ -61,13 +61,17 @@ public class PauseMenu : MonoBehaviour
 
     public void Resume()
     {
+        Debug.Log("using PauseMenu Function");
+
         isPaused = false;
 
-        PlayerReferences[0].PIRef.SwitchCurrentActionMap("Game");
+        PlayerReferences[0].PIRef.SwitchCurrentActionMap("PlayerOne-Game");
 
-        if(PlayerReferences[1])
+        if (PlayerReferences.Length > 1)
+        {
+            PlayerReferences[0].PIRef.SwitchCurrentActionMap("Game");
             PlayerReferences[1].PIRef.SwitchCurrentActionMap("Game");
-
+        }
         Debug.Log("Action Map is " + PlayerReferences[0].PIRef.currentActionMap);
         Debug.Log("Unpausing");
         EventSystem.current.SetSelectedGameObject(null); //set the selected button to null so that the game can reselect the Resume button when pausing again

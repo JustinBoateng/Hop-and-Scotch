@@ -68,16 +68,22 @@ public class Player : MonoBehaviour
      
         Win = false;
         Lose = false;
-        
+
         for (int i = 0; i < AnimationDictionary.AD.AnimationArray.Length; i++) {
             Debug.Log("Comparing " + AnimationDictionary.AD.AnimationArray[i].name + " to " + AnimationCode);
             if (AnimationDictionary.AD.AnimationArray[i].name == AnimationCode)
-            {
+            {              
                 animator.runtimeAnimatorController = AnimationDictionary.AD.AnimationArray[i];
                 break;
             }
         }
-        
+
+        //Leap = true;
+        //Midair = false;
+        //HopLevel = 0;
+        //Tripped = false;
+
+        //JumpReset();
     }
 
     // Update is called once per frame
@@ -177,6 +183,8 @@ public class Player : MonoBehaviour
         animator.SetBool("Tripped", trip && !Midair);
         animator.SetFloat("TripLag", triplag);
         animator.SetBool("HalfwayLeap", HalfwayLeap);
+
+        Debug.Log("Reached SetAnimation function in Player Class");
     }
 
     public void GetAnimation(string code)
@@ -191,6 +199,9 @@ public class Player : MonoBehaviour
         JumpPathTransfer();
         InterpolateAmount = 0;
         Leap = false;
+        Midair = false;
+        HopLevel = 0;
+        Tripped = false;
     }
 
     public void setPosition(Transform t)
@@ -524,6 +535,9 @@ public class Player : MonoBehaviour
 
     public void OnPause1(InputAction.CallbackContext context)
     {
+
+        Debug.Log("using Player Function");
+
         if (PlayerNumber != 1) return;
         Debug.Log("P1 context: " + context);
         if (context.performed)
@@ -539,7 +553,12 @@ public class Player : MonoBehaviour
             {
                 PauseMenu.PM.Resume();
                 //Debug.Log("Paused P1");
-                PIRef.SwitchCurrentActionMap("Game");
+
+                //if (GameManager.GM.NoofPlayers == 1)
+                 //   PIRef.SwitchCurrentActionMap("PlayerOne-Game");
+                //else
+                //    PIRef.SwitchCurrentActionMap("Game");
+
                 //Debug.Log("Current Action Map is: " + PIRef.currentActionMap);
             }
         }

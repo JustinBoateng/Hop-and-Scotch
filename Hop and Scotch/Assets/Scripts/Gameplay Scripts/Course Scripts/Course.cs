@@ -45,7 +45,7 @@ public class Course : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        StageCode = TransitionManager.TM.currStageCode.Substring(3,2);
+        StageCode = TransitionManager.TM.currStageCode.Substring(0,2);
 
         //set the boundary of the camera to not go beyond the stage
         CF.SetXBoundary(XMin, XMax);

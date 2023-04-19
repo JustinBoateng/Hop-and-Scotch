@@ -2183,6 +2183,7 @@ MonoBehaviour:
   StageArray:
   - {fileID: 8132368606403547938, guid: bc0f82e2c6a26a341820064b4d544836, type: 3}
   - {fileID: 1949357984798114244, guid: f45883e44b94fd24187417d229eeb0e6, type: 3}
+  CurrStage: 
 --- !u!4 &1036602669
 Transform:
   m_ObjectHideFlags: 0
@@ -3826,7 +3827,7 @@ MonoBehaviour:
     m_ActionName: UI/Submit1[/XInputControllerWindows/buttonSouth]
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 1726872502}
         m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: OnPause1
         m_Mode: 0
