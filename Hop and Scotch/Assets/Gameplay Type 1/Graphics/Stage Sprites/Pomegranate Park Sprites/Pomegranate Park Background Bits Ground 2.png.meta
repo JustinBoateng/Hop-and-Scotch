@@ -1,0 +1,298 @@
+fileFormatVersion: 2
+guid: 9169ae7cd5300e84187e31803981e3b6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -1155836350095428934
+    second: Pomegranate Park Background Bits Ground 2_0
+  - first:
+      213: 8056119990522806996
+    second: Pomegranate Park Background Bits Ground 2_1
+  - first:
+      213: -5915313825355922597
+    second: Pomegranate Park Background Bits Ground 2_2
+  - first:
+      213: 1063865187577749718
+    second: Pomegranate Park Background Bits Ground 2_3
+  - first:
+      213: 5987542735283768290
+    second: Pomegranate Park Background Bits Ground 2_4
+  - first:
+      213: 5351729056836903224
+    second: Pomegranate Park Background Bits Ground 2_5
+  - first:
+      213: -429709413579419046
+    second: Pomegranate Park Background Bits Ground 2_6
+  - first:
+      213: 6179025799238933793
+    second: Pomegranate Park Background Bits Ground 2_7
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Pomegranate Park Background Bits Ground 2_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 64
+        width: 204
+        height: 588
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab2f316a6f4a5ffe0800000000000000
+      internalID: -1155836350095428934
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pomegranate Park Background Bits Ground 2_1
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 63
+        width: 203
+        height: 588
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4d2090fb2761dcf60800000000000000
+      internalID: 8056119990522806996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pomegranate Park Background Bits Ground 2_2
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 600
+        width: 165
+        height: 49
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5304b0aa6598eda0800000000000000
+      internalID: -5915313825355922597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pomegranate Park Background Bits Ground 2_3
+      rect:
+        serializedVersion: 2
+        x: 770
+        y: 61
+        width: 204
+        height: 587
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d0e97260cb93ce00800000000000000
+      internalID: 1063865187577749718
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pomegranate Park Background Bits Ground 2_4
+      rect:
+        serializedVersion: 2
+        x: 1012
+        y: 61
+        width: 203
+        height: 587
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eb4f06f466081350800000000000000
+      internalID: 5987542735283768290
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pomegranate Park Background Bits Ground 2_5
+      rect:
+        serializedVersion: 2
+        x: 1422
+        y: 624
+        width: 103
+        height: 211
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83166e6f839254a40800000000000000
+      internalID: 5351729056836903224
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pomegranate Park Background Bits Ground 2_6
+      rect:
+        serializedVersion: 2
+        x: 1624
+        y: 61
+        width: 322
+        height: 785
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 60, y: 0, z: 59, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5215f6a09d590af0800000000000000
+      internalID: -429709413579419046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Pomegranate Park Background Bits Ground 2_7
+      rect:
+        serializedVersion: 2
+        x: 2066
+        y: 60
+        width: 323
+        height: 777
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 62, y: 0, z: 56, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12d5c9df93f40c550800000000000000
+      internalID: 6179025799238933793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

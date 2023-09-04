@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - OneWayPlatform
+  - Target
+  - LockOnZone
+  - HitBox
   layers:
   - Default
   - TransparentFX
@@ -13,13 +17,13 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - GroundLayerMask
+  - WallLayerMask
+  - Characters and Targets
+  - ATargets
+  - BTargets
+  - XTargets
+  - YTargets
   - 
   - 
   - 
